@@ -1,24 +1,40 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
 
-    public void CreateClicked()
+    public GameObject lessonMenu;
+    public GameObject titleMenu;
+
+	private void Start()
+	{
+        lessonMenu.SetActive(false);
+	}
+	public void CreateClicked()
     {
-        //do creating stuff. Will likely load new menu before loading in a new scene.
+        SceneManager.LoadScene(1);
     }
 
     public void LoadClicked()
     {
-        //do loading stuff. Will likely load in a new menu for loading lessons
+        titleMenu.SetActive(false);
+        lessonMenu.SetActive(true);
     }
 
-    public void ExitClicked() {
+    public void ExitClicked() 
+    {
 #if UNITY_EDITOR
         EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
     }
+
+    public void BackClicked()
+	{
+        lessonMenu.SetActive(false);
+        titleMenu.SetActive(true);
+	}
 }
