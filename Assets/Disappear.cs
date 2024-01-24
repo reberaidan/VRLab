@@ -17,7 +17,7 @@ public class Dissapear : MonoBehaviour
     void Update()
     {
 		
-        if (frame == 500) {
+        if (frame == 300) {
 			PauseInstruction.SetActive(false);
 		}
 		
