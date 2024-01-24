@@ -6,7 +6,7 @@ using SSSoftware.Save;
 
 public class Saver : MonoBehaviour
 {
-    [SerializeField] private string saveName = "mysave"; 
+    [SerializeField] private string saveName = "mysave.sav"; 
 
     // Start is called before the first frame update
     void Start()
