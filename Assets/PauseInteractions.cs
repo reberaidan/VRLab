@@ -16,7 +16,7 @@ public class PauseInteractions : MonoBehaviour
 	// Start is called before the first frame update
     public void Start()
     {
-        //PauseMenu.SetActive(false);
+        PauseMenu.SetActive(false);
 		HelpMenu.SetActive(false);
     }
 
