@@ -7,17 +7,12 @@ public class Dissapear : MonoBehaviour
 {	
 	public GameObject PauseInstruction;
 	public int frame = 0;	
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
 		
-        if (frame == 300) {
+        if (frame == 200) {
 			PauseInstruction.SetActive(false);
 		}
 		
