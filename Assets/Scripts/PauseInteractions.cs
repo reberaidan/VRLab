@@ -24,10 +24,6 @@ public class PauseInteractions : MonoBehaviour
 		PauseMenu.SetActive(false);
 	}
 	
-	//public void SaveClicked(){
-		
-	//}
-	
 	public void HelpClicked(){
 			HelpMenu.SetActive(true);
 			PauseMenu.SetActive(false);
