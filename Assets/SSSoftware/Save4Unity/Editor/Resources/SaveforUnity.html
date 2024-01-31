@@ -1,0 +1,3172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Save for Unity</title>
+
+	<link href="SaveForUnity_files/css.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="SaveForUnity_files/prettify.css">
+	<script src="SaveForUnity_files/jquery.min.txt"></script>
+	<link rel="stylesheet" href="SaveForUnity_files/style.css">
+	<link rel="stylesheet" href="SaveForUnity_files/gif.css">
+	<script type="text/javascript" src="SaveForUnity_files/site.txt"></script>
+	<script type="text/javascript" src="SaveForUnity_files/gif.txt" defer="defer"></script>
+</head>
+<body onload="PR.prettyPrint()">
+	<header class="header">
+		<span class="center">Save for Unity Version V.1.0.1</span>
+	</header>
+	<div class="navigation">
+		<nav>
+			<ul>
+<li><a href="#sectionA"><span class="label">Introduction</span></a>
+</li>
+<li><a href="#sectionB"><span class="label">Main Assets</span></a>
+
+<ul>
+<li><a href="#sectionBA"><span class="label">Core</span></a>
+</li>
+<li><a href="#sectionBB"><span class="label">Pro</span></a>
+</li>
+<li><a href="#sectionBC"><span class="label">Expert</span></a>
+</li>
+<li><a href="#sectionBD"><span class="label">Complete</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionC"><span class="label">Save</span></a>
+
+<ul>
+<li><a href="#sectionCA"><span class="label">Constructor</span></a>
+</li>
+<li><a href="#sectionCB"><span class="label">Methods</span></a>
+
+<ul>
+<li><a href="#sectionCBA"><span class="label">GameObject</span></a>
+</li>
+<li><a href="#sectionCBB"><span class="label">Object</span></a>
+</li>
+<li><a href="#sectionCBC"><span class="label">Scene</span></a>
+</li>
+<li><a href="#sectionCBD"><span class="label">Close</span></a>
+</li>
+<li><a href="#sectionCBE"><span class="label">Delete</span></a>
+</li>
+<li><a href="#sectionCBF"><span class="label">Exists</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionCC"><span class="label">Properties</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionD"><span class="label">Load</span></a>
+
+<ul>
+<li><a href="#sectionDA"><span class="label">Constructor</span></a>
+</li>
+<li><a href="#sectionDB"><span class="label">Methods</span></a>
+
+<ul>
+<li><a href="#sectionDBA"><span class="label">GameObject</span></a>
+</li>
+<li><a href="#sectionDBB"><span class="label">Object</span></a>
+</li>
+<li><a href="#sectionDBC"><span class="label">Scene</span></a>
+</li>
+<li><a href="#sectionDBD"><span class="label">Close</span></a>
+</li>
+<li><a href="#sectionDBE"><span class="label">Exists</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionDC"><span class="label">Interfaces</span></a>
+
+<ul>
+<li><a href="#sectionDCA"><span class="label">ILoad</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionDD"><span class="label">Properties</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionE"><span class="label">Encryption</span></a>
+</li>
+<li><a href="#sectionF"><span class="label">Add-On Modules</span></a>
+
+<ul>
+<li><a href="#sectionFA"><span class="label">Animation</span></a>
+</li>
+<li><a href="#sectionFB"><span class="label">Audio</span></a>
+</li>
+<li><a href="#sectionFC"><span class="label">Camera &amp; Light</span></a>
+</li>
+<li><a href="#sectionFD"><span class="label">Events</span></a>
+</li>
+<li><a href="#sectionFE"><span class="label">Graphics</span></a>
+</li>
+<li><a href="#sectionFF"><span class="label">Joints</span></a>
+</li>
+<li><a href="#sectionFG"><span class="label">Monobehaviours</span></a>
+</li>
+<li><a href="#sectionFH"><span class="label">Navigation</span></a>
+</li>
+<li><a href="#sectionFI"><span class="label">Physics</span></a>
+</li>
+<li><a href="#sectionFJ"><span class="label">Terrain</span></a>
+</li>
+<li><a href="#sectionFK"><span class="label">Tile Maps</span></a>
+</li>
+<li><a href="#sectionFL"><span class="label">UI</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionG"><span class="label">Example Code</span></a>
+
+<ul>
+<li><a href="#sectionGA"><span class="label">Simple Save and Load</span></a>
+</li>
+<li><a href="#sectionGB"><span class="label">Multiple Objects</span></a>
+</li>
+<li><a href="#sectionGC"><span class="label">Game Objects</span></a>
+</li>
+<li><a href="#sectionGD"><span class="label">Complex Save</span></a>
+
+<ul>
+<li><a href="#sectionGDA"><span class="label">Save Data</span></a>
+</li>
+<li><a href="#sectionGDB"><span class="label">Saveable Component</span></a>
+</li>
+<li><a href="#sectionGDC"><span class="label">Save and Load</span></a>
+</li>
+</ul></li>
+</ul></li>
+<li><a href="#sectionH"><span class="label">Supported Data Types</span></a>
+
+<ul>
+<li><a href="#sectionHA"><span class="label">C# Data types</span></a>
+</li>
+<li><a href="#sectionHB"><span class="label">Unity Data types</span></a>
+</li>
+</ul></li>
+<li><a href="#sectionI"><span class="label">Additional Information</span></a>
+
+<ul>
+<li><a href="#sectionIA"><span class="label">Support</span></a>
+</li>
+<li><a href="#sectionIB"><span class="label">Change Requests</span></a>
+</li>
+</ul></li>
+			</ul>
+			<br><br><br>
+		</nav>
+	</div>
+	<div class="navigation2">
+		<nav>
+			<ul>
+			</ul>
+			<br><br><br>
+		</nav>
+	</div>
+	<div class="fsm" id="mainContent"><div id="fsm_actual" style="position: absolute;"></div></div>
+
+<div class="content" id="sectionA" style="">
+	<h2>Introduction</h2>
+	<section>
+		<p>
+			Save for Unity is a suite of programs that enables the saving and 
+loading of just about any data used by a Unity project at run-time.
+<br>
+
+<br>
+The system consists of a basic Core module for which add-on modules may be purchased to extend the functionality as required.
+<br>
+
+<br>
+Alongside the Core module the Pro and Expert assets come with several 
+add-on modules included. The Complete asset will be continually updated 
+to include new add-on modules as they become available.
+<br>
+
+<br>
+Save for Unity uses a custom binary serialization system for fast, 
+efficient and secure data encoding. Optionally, you may add your own 
+encryption method to the system if required. The serialized data is 
+stored in a proprietory file format, any attempt to modify a file will 
+result in it becoming unusable.
+<br>
+
+<br>
+The serialization system stores all of the data by value whilst 
+preserving references between objects with as little reliance on 
+reflection as possible.
+<br>
+
+<br>
+This version of the utility was written in C# with Unity .Net 4.7.1 
+libraries and tested using Unity 2020.3 and 2021.3 for Standalone, 
+WebGL, Android and IOS but should function on all platforms supported by
+ Unity.
+<br>
+
+<br>
+Whilst every effort has been made to ensure the compatibility of Save 
+for Unity with all Unity versions, the correct functioning of the 
+software with Unity Alpha, Beta or Technical releases cannot be 
+guaranteed.
+<br>
+
+<br>
+<b>Important Note:</b> Due to breaking changes introduced by Unity in 
+Version 2022 the Save For Unity system is supplied as 2 package 
+versions. One built for Unity 2020 and 2021 one built for Unity 2022. 
+Please make sure you are using the correct package for your Unity 
+version.
+<br>
+
+<br>
+Please refer to the section Change Requests should you have a suggestion
+ for a new add-on module or an enhancement to an existing one.
+<br>
+
+<br>
+The code that makes up this utility is copyright SteveSmith.SoftWare 
+2022. Unless specifically stated in the code file or this documentation,
+ no part of the system may be copied or modified. Neither may it be 
+stored in such a way that would make it available to the public outside 
+of the Unity Asset Store.
+<br>
+
+<br>
+This documentation is available online at https://stevesmith.software. 
+You will also find there the form for filing a bug report should it be 
+necessary.
+<br>
+
+<br>
+Steve Smith 2023.
+<br>
+
+<br>
+Save for Unity Version 1.0.1 July 2023<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionIB">&lt;- Previous</a>
+	<a href="#sectionB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionB" style="display: none;">
+	<h2>Main Assets</h2>
+	<section>
+		<p>
+			Save for Unity is available in 4 main assets, the basic Core asset and 3 bundles.<br>
+		</p>
+<div class="subcontent" id="sectionBA">
+	<span class="label1">Core</span>
+	<section>
+		<p>
+			The Core asset includes serialization/deserialization for the following objects:-
+<br>
+
+<br>
+Unity Objects
+<br>
+
+<br>
+GameObject
+<br>
+Transform
+<br>
+
+<br>
+Non Unity Objects
+<br>
+
+<br>
+C# classes and structs with the System.Serializable attribute
+<br>
+
+<br>
+Refer to the Supported Data Type section for a full list of primitives and Unity structs supported.
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionB">&lt;- Previous</a>
+	<a href="#sectionBB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionBB">
+	<span class="label1">Pro</span>
+	<section>
+		<p>
+			The Pro asset includes everything from the Core asset with the addition of
+<br>
+
+<br>
+Unity Objects
+<br>
+
+<br>
+Any class deriving from Monobehaviour
+<br>
+
+<br>
+Add-On Modules
+<br>
+
+<br>
+Graphics
+<br>
+Camera &amp; Lights
+<br>
+Physics
+<br>
+Audio
+<br>
+
+<br>
+Refer to the relevant add-on module section to see the objects handled by these add-ons.<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionBA">&lt;- Previous</a>
+	<a href="#sectionBC">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionBC">
+	<span class="label1">Expert</span>
+	<section>
+		<p>
+			The Expert asset includes everything from the Core asset with the addition of
+<br>
+
+<br>
+Unity Objects
+<br>
+
+<br>
+Any class deriving from Monobehaviour
+<br>
+
+<br>
+Add-On Modules
+<br>
+
+<br>
+Graphics
+<br>
+Camera &amp; Lights
+<br>
+Physics
+<br>
+Audio
+<br>
+Events
+<br>
+UI including Text Mesh Pro
+<br>
+Animation
+<br>
+Navigation
+<br>
+Terrain
+<br>
+
+<br>
+Refer to the relevant add-on module section to see the objects handled by these add-ons.<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionBB">&lt;- Previous</a>
+	<a href="#sectionBD">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionBD">
+	<span class="label1">Complete</span>
+	<section>
+		<p>
+			The Complete asset includes everything from the Core asset with the addition of
+<br>
+
+<br>
+Unity Objects
+<br>
+
+<br>
+Any class deriving from Monobehaviour
+<br>
+
+<br>
+Add-On Modules
+<br>
+
+<br>
+Graphics
+<br>
+Camera &amp; Lights
+<br>
+Physics
+<br>
+Audio
+<br>
+Events
+<br>
+UI including Text Mesh Pro
+<br>
+Animation
+<br>
+Navigation
+<br>
+Terrain
+<br>
+Tile Maps
+<br>
+Joints and Hinges
+<br>
+
+<br>
+Refer to the relevant add-on module section to see the objects handled by these add-ons.
+<br>
+
+<br>
+This asset will be continually updated with additional add-on modules as they become available.<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionBC">&lt;- Previous</a>
+	<a href="#sectionC">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionA">&lt;- Previous</a>
+	<a href="#sectionBA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionC" style="display: none;">
+	<h2>Save</h2>
+	<section>
+		<p>
+			Create an instance of this class to save data to a file
+<br>
+
+<br>
+Namespace <b>SSSoftware.Save</b>
+<br>
+
+<br>
+Class <b>public class Save</b>
+		</p>
+<div class="subcontent" id="sectionCA">
+	<span class="label1">Constructor</span>
+	<section>
+		<p>
+			</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>public</td>
+		<td colspan="2"><b>Save</b>(string fileName, Func&lt;byte[], byte[]&gt; encrypt = null)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Create an instance of the Save class</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>fileName</td>
+		<td>The name of the file to write to.<br>
+The file will be saved in the Application.persistentData folder. If 
+fileName contains a folder name this will be a sub-folder of the 
+persistent data folder. If the sub folder does not exist it will be 
+created. If the file already exists it will be overwritten.
+</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>encrypt</td>
+		<td>An optional method to perform data encryption<br>
+If specified this method will be called to encrypt the data. Refer to the Encryption section for more information
+</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+
+</span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySaveFile.sav"</span><span class="pun">,</span><span class="pln"> myEncrypt</span><span class="pun">);</span><span class="pln">
+
+</span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> myEncrypt</span><span class="pun">(</span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> bytes</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+   </span><span class="com">// Perform Encryption here</span><span class="pln">
+   </span><span class="kwd">return</span><span class="pln"> encryptedBytes</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionC">&lt;- Previous</a>
+	<a href="#sectionCB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionCB">
+	<span class="label1">Methods</span>
+	<section>
+		<p>
+			Game Objects may be given the Tag 'NoSave'. Any Game Object with this
+ tag will be ignored by the save system this will also include it's 
+children.<br>
+		</p>
+<div class="subcontent" id="sectionCBA">
+	<span class="label1">GameObject</span>
+	<section>
+		<p>
+			The GameObject methods will save all of the GameObjects, their Components and Children
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>GameObject</b>(GameObject gameObject, bool keepOpen)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Save a single GameObject</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>gameObject</td>
+		<td>The GameObject to save</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>keepOpen</td>
+		<td>False to close the file on exit. True to keep the file open to add more data. Default: False</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">GameObject</span><span class="pun">(</span><span class="pln">gameObject</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>GameObject</b>(List&lt;GameObject&gt; gameObjects, bool keepOpen)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Save a list of GameObjects</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>gameObjects</td>
+		<td>The list of GameObjects to save</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>keepOpen</td>
+		<td>False to close the file on exit. True to keep the file open to add more data. Default: False</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">GameObject</span><span class="pun">&gt;</span><span class="pln"> gameObjects </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">GameObject</span><span class="pun">&gt;();</span><span class="pln">
+            </span><span class="com">// Fill the list</span><span class="pln">
+
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">GameObject</span><span class="pun">(</span><span class="pln">gameObjects</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>GameObject</b>(GameObject[] gameObjects, bool keepOpen)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Save an array of GameObjects</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>gameObjects</td>
+		<td>The array of GameObjects to save</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>keepOpen</td>
+		<td>False to close the file on exit. True to keep the file open to add more data. Default: False</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">GameObject</span><span class="pun">[]</span><span class="pln"> gameObjects </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">GameObject</span><span class="pun">[</span><span class="lit">10</span><span class="pun">];</span><span class="pln">
+            </span><span class="com">// Fill the array</span><span class="pln">
+
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">GameObject</span><span class="pun">(</span><span class="pln">gameObjects</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCB">&lt;- Previous</a>
+	<a href="#sectionCBB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionCBB">
+	<span class="label1">Object</span>
+	<section>
+		<p>
+			The Object methods will save any serializable object which does not inherit from a Unity object.
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>Object</b>(object objects, bool keepOpen)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Save a single serializable object</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>objects</td>
+		<td>The object to save</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>keepOpen</td>
+		<td>False to close the file on exit. True to keep the file open to add more data. Default: False</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">MyClass</span><span class="pln"> myClass </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pun">();</span><span class="pln">
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="pln">myClass</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>Object</b>(List&lt;object&gt; objects, bool keepOpen)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Save a list serializable objects</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>objects</td>
+		<td>The list of objects to save</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>keepOpen</td>
+		<td>False to close the file on exit. True to keep the file open to add more data. Default: False</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">MyClass</span><span class="pun">&gt;</span><span class="pln"> myClasses </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">MyClass</span><span class="pun">&gt;();</span><span class="pln">
+            </span><span class="com">// Fill list</span><span class="pln">
+
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="pln">myClasses</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>Object</b>(object[] objects, bool keepOpen)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Save an array of serializable objects</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>objects</td>
+		<td>The array of objects to save</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>keepOpen</td>
+		<td>False to close the file on exit. True to keep the file open to add more data. Default: False</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">MyClass</span><span class="pun">[]</span><span class="pln"> myClasses </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pun">[</span><span class="lit">10</span><span class="pun">];</span><span class="pln">
+            </span><span class="com">// Fill array</span><span class="pln">
+
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="pln">myClasses</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCBA">&lt;- Previous</a>
+	<a href="#sectionCBC">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionCBC">
+	<span class="label1">Scene</span>
+	<section>
+		<p>
+			</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>Scene</b>(Scene scene, bool keepOpen)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">This method will save the complete contents of a scene</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>scene</td>
+		<td>The scene to save</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>keepOpen</td>
+		<td>False to close the file on exit. True to keep the file open to add more data. Default: False</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">.</span><span class="typ">SceneManagement</span><span class="pun">;</span><span class="pln">
+
+</span><span class="typ">Scene</span><span class="pln"> scene </span><span class="pun">=</span><span class="pln"> </span><span class="typ">SceneManager</span><span class="pun">.</span><span class="typ">GetActiveScene</span><span class="pun">();</span><span class="pln">
+</span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+save</span><span class="pun">.</span><span class="typ">Scene</span><span class="pun">(</span><span class="pln">scene</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCBB">&lt;- Previous</a>
+	<a href="#sectionCBD">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionCBD">
+	<span class="label1">Close</span>
+	<section>
+		<p>
+			Closes an open Save file. Close should be called if the Save keepOpen option has been used
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>Close</b>()</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Close the Save file</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>None</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>None</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+
+</span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+save</span><span class="pun">.</span><span class="typ">Scene</span><span class="pun">(</span><span class="pln">scene</span><span class="pun">,</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+save</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCBC">&lt;- Previous</a>
+	<a href="#sectionCBE">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionCBE">
+	<span class="label1">Delete</span>
+	<section>
+		<p>
+			Static method to Delete an existing Save file
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>static bool</td>
+		<td colspan="2"><b>Delete</b>(string fileName)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Delete the file if it exists</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>fileName</td>
+		<td>The name of the file to delete</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>true</td>
+		<td>The file was deleted</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>false</td>
+		<td>The file was not found</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">bool</span><span class="pln"> deleted </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">.</span><span class="typ">Delete</span><span class="pun">(</span><span class="str">"myFile.sav"</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">deleted</span><span class="pun">)</span><span class="pln"> </span><span class="typ">Debug</span><span class="pun">.</span><span class="typ">Log</span><span class="pun">(</span><span class="str">"File Deleted"</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCBD">&lt;- Previous</a>
+	<a href="#sectionCBF">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionCBF">
+	<span class="label1">Exists</span>
+	<section>
+		<p>
+			Static method to check for the existance of a Save file
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>static bool</td>
+		<td colspan="2"><b>Exists</b>(string fileName)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Check the file exists in the persistent data folder</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>fileName</td>
+		<td>The name of the file to check</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>true</td>
+		<td>The file exists</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>false</td>
+		<td>The file was not found</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">bool</span><span class="pln"> exists </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">.</span><span class="typ">Exists</span><span class="pun">(</span><span class="str">"myFile.sav"</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">exists</span><span class="pun">)</span><span class="pln"> </span><span class="typ">Debug</span><span class="pun">.</span><span class="typ">Log</span><span class="pun">(</span><span class="str">"File Exists"</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCBE">&lt;- Previous</a>
+	<a href="#sectionCC">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCA">&lt;- Previous</a>
+	<a href="#sectionCBA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionCC">
+	<span class="label1">Properties</span>
+	<section>
+		<p>
+			The Save class has a static property, Trace. Set this to true to get a verbose log of the actions taken by the system.<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCBF">&lt;- Previous</a>
+	<a href="#sectionD">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionBD">&lt;- Previous</a>
+	<a href="#sectionCA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionD" style="display: none;">
+	<h2>Load</h2>
+	<section>
+		<p>
+			Create an instance of this class to load data from a file
+<br>
+
+<br>
+Namespace <b>SSSoftware.Save</b>
+<br>
+
+<br>
+Class <b>public class Load</b>
+		</p>
+<div class="subcontent" id="sectionDA">
+	<span class="label1">Constructor</span>
+	<section>
+		<p>
+			</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>public</td>
+		<td colspan="2"><b>Load</b>(string fileName, Func&lt;byte[], byte[]&gt; decrypt = null)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Create an instance of the Load class</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>fileName</td>
+		<td>The name of the file to read from.<br>
+The file should be located in Application.persistentData folder or a 
+specified sub-folder. If the file does not exist an exception will be 
+thrown
+</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>decrypt</td>
+		<td>An optional method to perform data decryption<br>
+If specified this method will be called to decrypt the data. Refer to the Encryption section for more information
+</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+
+</span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySaveFile.sav"</span><span class="pun">,</span><span class="pln"> myDecrypt</span><span class="pun">);</span><span class="pln">
+
+</span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> myDecrypt</span><span class="pun">(</span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> bytes</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+   </span><span class="com">// Perform Decryption here</span><span class="pln">
+   </span><span class="kwd">return</span><span class="pln"> decryptedBytes</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionD">&lt;- Previous</a>
+	<a href="#sectionDB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionDB">
+	<span class="label1">Methods</span>
+	<section>
+		<p>
+			
+		</p>
+<div class="subcontent" id="sectionDBA">
+	<span class="label1">GameObject</span>
+	<section>
+		<p>
+			The GameObject method will load the GameObject, it's Components and all of it's children
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>GameObject</td>
+		<td colspan="2"><b>GameObject</b>(string name)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Load a single GameObject by name</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>name</td>
+		<td>The name of the GameObject to Load</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>GameObject</td>
+		<td>The Loaded GameObject</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">GameObject</span><span class="pln"> go </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">GameObject</span><span class="pun">(</span><span class="str">"myGameObject"</span><span class="pun">);</span><span class="pln">
+            loadf</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>List&lt;GameObject&gt;</td>
+		<td colspan="2"><b>GameObject</b>()</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Load all of the GameObjects into the active scene</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>List&lt;GameObject&gt;</td>
+		<td>The list of Loaded GameObjects</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">GameObject</span><span class="pun">&gt;</span><span class="pln"> gameObjects </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">GameObject</span><span class="pun">();</span><span class="pln">
+            load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDB">&lt;- Previous</a>
+	<a href="#sectionDBB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionDBB">
+	<span class="label1">Object</span>
+	<section>
+		<p>
+			The Object method will load the serializable objects in the file.
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>List&lt;object&gt;</td>
+		<td colspan="2"><b>Object</b>()</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Loads all of the serializable objects and return them as a list</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>List&lt;object&gt;</td>
+		<td>A list of the loaded objects</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">List</span><span class="str">&lt;object&gt;</span><span class="pln"> objects </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">();</span><span class="pln">
+            load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>List&lt;object&gt;</td>
+		<td colspan="2"><b>Object</b>(Type type)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Loads all of the serializable objects of the specified Type and return them as a list</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>type</td>
+		<td>The Type of the objects to load</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>List&lt;object&gt;</td>
+		<td>A list of the loaded objects</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">List</span><span class="str">&lt;object&gt;</span><span class="pln"> objects </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="kwd">typeof</span><span class="pun">(</span><span class="typ">MyClass</span><span class="pun">));</span><span class="pln">
+            load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>List&lt;T&gt;</td>
+		<td colspan="2"><b>Object&lt;T&gt;</b>()</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Loads all of the serializable objects of the specified Type and return them as a list</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>List&lt;T&gt;</td>
+		<td>A list of the loaded objects</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+            </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">MyClass</span><span class="pun">&gt;</span><span class="pln"> objects </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">&lt;</span><span class="typ">MyClass</span><span class="pun">&gt;();</span><span class="pln">
+            load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDBA">&lt;- Previous</a>
+	<a href="#sectionDBC">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionDBC">
+	<span class="label1">Scene</span>
+	<section>
+		<p>
+			</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>Scene</b>(Scene scene)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">This method will load the saved data into the scene</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>scene</td>
+		<td>The scene to load into</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">.</span><span class="typ">SceneManagement</span><span class="pun">;</span><span class="pln">
+
+</span><span class="typ">Scene</span><span class="pln"> scene </span><span class="pun">=</span><span class="pln"> </span><span class="typ">SceneManager</span><span class="pun">.</span><span class="typ">GetActiveScene</span><span class="pun">();</span><span class="pln">
+</span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+load</span><span class="pun">.</span><span class="typ">Scene</span><span class="pun">(</span><span class="pln">scene</span><span class="pun">);</span><span class="pln">
+load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDBB">&lt;- Previous</a>
+	<a href="#sectionDBD">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionDBD">
+	<span class="label1">Close</span>
+	<section>
+		<p>
+			The Close method Closes the open Load file. Close must be called before the file can be used in another Save.
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>Close</b>()</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Close the Load file</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>None</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>None</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="str">"mySave"</span><span class="pun">);</span><span class="pln">
+load</span><span class="pun">.</span><span class="typ">Scene</span><span class="pun">(</span><span class="pln">scene</span><span class="pun">);</span><span class="pln">
+load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDBC">&lt;- Previous</a>
+	<a href="#sectionDBE">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionDBE">
+	<span class="label1">Exists</span>
+	<section>
+		<p>
+			Static method to check for the existance of a Save file
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>static bool</td>
+		<td colspan="2"><b>Exists</b>(string fileName)</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Check the file exists in the persistent data folder</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>fileName</td>
+		<td>The name of the file to check</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>true</td>
+		<td>The file exists</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>false</td>
+		<td>The file was not found</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">bool</span><span class="pln"> exists </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">.</span><span class="typ">Exists</span><span class="pun">(</span><span class="str">"myFile.sav"</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">exists</span><span class="pun">)</span><span class="pln"> </span><span class="typ">Debug</span><span class="pun">.</span><span class="typ">Log</span><span class="pun">(</span><span class="str">"File Exists"</span><span class="pun">);</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDBD">&lt;- Previous</a>
+	<a href="#sectionDC">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDA">&lt;- Previous</a>
+	<a href="#sectionDBA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionDC">
+	<span class="label1">Interfaces</span>
+	<section>
+		<p>
+			
+		</p>
+<div class="subcontent" id="sectionDCA">
+	<span class="label1">ILoad</span>
+	<section>
+		<p>
+			Whilst every effort has been made to restore references between 
+objects on Load it may not always be possible to do so. The ILoad 
+interface may be added to a Monobehaviour class to provide a callback 
+once loading is complete in order for that class to fix any missing 
+references or carry out any other kind of re-initialization processes.
+<br>
+
+<br>
+</p><table>
+	<tbody><tr><td><br></td></tr>
+	<tr>
+		<td>void</td>
+		<td colspan="2"><b>OnLoadComplete</b>()</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Description</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Called by the Load class once all loading of data is completed</td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Parameters</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Return values</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>none</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr>
+		<td></td>
+		<td><i>Example</i></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">
+			<p>
+				</p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">NewBehaviourScript</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">MonoBehaviour</span><span class="pun">,</span><span class="pln"> </span><span class="typ">ILoad</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">GameObject</span><span class="pln"> target</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">OnLoadComplete</span><span class="pun">()</span><span class="pln">
+	</span><span class="pun">{</span><span class="pln">
+		target </span><span class="pun">=</span><span class="pln"> </span><span class="typ">GameObject</span><span class="pun">.</span><span class="typ">Find</span><span class="pun">(</span><span class="str">"Target"</span><span class="pun">);</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+			<p></p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDC">&lt;- Previous</a>
+	<a href="#sectionDD">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDBE">&lt;- Previous</a>
+	<a href="#sectionDCA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionDD">
+	<span class="label1">Properties</span>
+	<section>
+		<p>
+			The Load class has a static property, Trace. Set this to true to get a verbose log of the actions taken by the system.<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDCA">&lt;- Previous</a>
+	<a href="#sectionE">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionCC">&lt;- Previous</a>
+	<a href="#sectionDA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionE" style="display: none;">
+	<h2>Encryption</h2>
+	<section>
+		<p>
+			Due to the propriatory nature of the Save for Unity file format and 
+serializer and the fact that encrypting and decrypting data is an 
+intensive task this system does not include an encryption module.
+<br>
+
+<br>
+However, hooks have been provided in the constructors of the Save and 
+Load classes to allow the user to define their own encryption routines 
+if required.
+<br>
+
+<br>
+As a part of the Save finalization process a byte array will be passed 
+to an encryption method written by the user and that method should 
+return a byte array of that encrypted data which will then by written to
+ the save file.
+<br>
+
+<br>
+As a part of the Load initialization process the encrypted byte array 
+will be passed to a decryption method written by the user and that 
+method should return a byte array of that decrypted data. This data is 
+then used to load the file.
+<br>
+
+<br>
+It is the responsibility of the encryption and decryption methods 
+provided by the user to ensure that the decrypted data matches exactly 
+with the data passed for encryption.
+<br>
+
+<br>
+Once a save file has been saved with encrypted data it will be 
+impossible to use that file without the corresponding decryption method.
+<br>
+
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionDD">&lt;- Previous</a>
+	<a href="#sectionF">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionF" style="display: none;">
+	<h2>Add-On Modules</h2>
+	<section>
+		<p>
+			The Add-on modules are NOT stand alone assets. You must use them in combination with one of the main Save for Unity assets.<br>
+		</p>
+<div class="subcontent" id="sectionFA">
+	<span class="label1">Animation</span>
+	<section>
+		<p>
+			The Animation module provides support for the following objects
+<br>
+
+<br>
+    UnityEngine.Animation
+<br>
+    UnityEngine.AnimationClip
+<br>
+    UnityEngine.Animator
+<br>
+    UnityEngine.AnimationCurve
+<br>
+    UnityEngine.Animations.AimConstraint
+<br>
+    UnityEngine.Animations.AnimationClipPlayable
+<br>
+    UnityEngine.Animations.AnimationLayerMixerPlayable
+<br>
+    UnityEngine.Animations.AnimationMixerPlayable
+<br>
+    UnityEngine.Animations.AnimationPlayableOutput
+<br>
+    UnityEngine.Animations.AnimationScriptPlayable
+<br>
+    UnityEngine.Animations.AnimatorControllerPlayable
+<br>
+    UnityEngine.Animations.LookAtConstraint
+<br>
+    UnityEngine.Animations.ConstraintSource
+<br>
+    UnityEngine.Animations.MuscleHandle
+<br>
+    UnityEngine.Animations.ParentConstraint
+<br>
+    UnityEngine.Animations.PositionConstraint
+<br>
+    UnityEngine.Animations.PropertySceneHandle
+<br>
+    UnityEngine.Animations.PropertyStreamHandle
+<br>
+    UnityEngine.Animations.RotationConstraint
+<br>
+    UnityEngine.Animations.ScaleConstraint
+<br>
+    UnityEngine.Animations.TransformSceneHandle
+<br>
+    UnityEngine.Animations.TransformStreamHandle
+<br>
+    UnityEngine.Avatar<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionF">&lt;- Previous</a>
+	<a href="#sectionFB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFB">
+	<span class="label1">Audio</span>
+	<section>
+		<p>
+			The Audio module provides support for the following objects
+<br>
+
+<br>
+    UnityEngine.AudioClip,
+<br>
+    UnityEngine.AudioSource,
+<br>
+    UnityEngine.Audio.AudioMixer,
+<br>
+    UnityEngine.Audio.AudioMixerGroup,
+<br>
+    UnityEngine.Audio.AudioClipPlayable,
+<br>
+    UnityEngine.Audio.AudioMixerPlayable,
+<br>
+    UnityEngine.Audio.AudioMixerSnapshot,
+<br>
+    UnityEngine.Audio.AudioMixerUpdateMode,
+<br>
+    UnityEngine.Audio.AudioPlayableOutput,
+<br>
+    UnityEngine.AudioBehaviour,
+<br>
+    UnityEngine.AudioChorusFilter,
+<br>
+    UnityEngine.AudioConfiguration,
+<br>
+    UnityEngine.AudioDistortionFilter,
+<br>
+    UnityEngine.AudioEchoFilter,
+<br>
+    UnityEngine.AudioHighPassFilter,
+<br>
+    UnityEngine.AudioLowPassFilter,
+<br>
+    UnityEngine.AudioReverbFilter,
+<br>
+    UnityEngine.AudioReverbZone,
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFA">&lt;- Previous</a>
+	<a href="#sectionFC">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFC">
+	<span class="label1">Camera &amp; Light</span>
+	<section>
+		<p>
+			The Camera module provides support for the following objects
+<br>
+
+<br>
+AudioListener
+<br>
+Camera
+<br>
+Light
+<br>
+
+<br>
+Note: The Light class may cause problems in a build when using URP or 
+HDRP. It is recommended that it not be used in this situation.
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFB">&lt;- Previous</a>
+	<a href="#sectionFD">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFD">
+	<span class="label1">Events</span>
+	<section>
+		<p>
+			The Events module provides support for all objects deriving from UnityEngine.Events.Event
+<br>
+
+<br>
+This add-on module is included in the UI add-on miodule<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFC">&lt;- Previous</a>
+	<a href="#sectionFE">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFE">
+	<span class="label1">Graphics</span>
+	<section>
+		<p>
+			The Graphics module provides support for the following objects
+<br>
+
+<br>
+Material
+<br>
+Mesh
+<br>
+MeshFilter
+<br>
+MeshRenderer
+<br>
+Shader
+<br>
+Sprite
+<br>
+Texture2D
+<br>
+SkinnedMeshRenderer
+<br>
+
+<br>
+Note: For Texture2D assets to be serialized including the image data they must be flagged as Read/Write in their inspector
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFD">&lt;- Previous</a>
+	<a href="#sectionFF">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFF">
+	<span class="label1">Joints</span>
+	<section>
+		<p>
+			The Joints module provides support for the following objects
+<br>
+
+<br>
+3D
+<br>
+
+<br>
+CharacterJoint
+<br>
+ConfigurableJoint
+<br>
+FixedJoint
+<br>
+HingeJoint
+<br>
+SpringJoint
+<br>
+
+<br>
+2D
+<br>
+
+<br>
+DistanceJoint2D
+<br>
+FixedJoint2D
+<br>
+FrictionJoint2D
+<br>
+HingeJoint2D
+<br>
+RelitiveJoint2D
+<br>
+SliderJoint2D
+<br>
+SpringJoint2D
+<br>
+TargetJoint2D
+<br>
+WheelJoint2D
+<br>
+
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFE">&lt;- Previous</a>
+	<a href="#sectionFG">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFG">
+	<span class="label1">Monobehaviours</span>
+	<section>
+		<p>
+			The Monobehaviour module give support for any class which derives from UnityEngine.Monobehaviour
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFF">&lt;- Previous</a>
+	<a href="#sectionFH">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFH">
+	<span class="label1">Navigation</span>
+	<section>
+		<p>
+			The Navigation module provides support for the following objects
+<br>
+
+<br>
+NavMeshAgent
+<br>
+NavMeshData
+<br>
+NavMeshHit
+<br>
+NavMeshObstacle
+<br>
+OcclusionArea
+<br>
+PositionAsUV1
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFG">&lt;- Previous</a>
+	<a href="#sectionFI">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFI">
+	<span class="label1">Physics</span>
+	<section>
+		<p>
+			The Physics module provides support for the following objects
+<br>
+
+<br>
+3D
+<br>
+
+<br>
+BoxCollider
+<br>
+CapsuleCollider
+<br>
+MeshCollider
+<br>
+PhysicsMaterial
+<br>
+PhysicsRaycaster
+<br>
+Rigidbody
+<br>
+SphereCollider
+<br>
+WheelCollider
+<br>
+CharacterController
+<br>
+
+<br>
+2D
+<br>
+
+<br>
+BoxCollider2D
+<br>
+CapsuleCollider2D
+<br>
+CircleCollider2D
+<br>
+CompositeCollider2D
+<br>
+EdgeCollider2D
+<br>
+PhysicsMaterial2D
+<br>
+Physics2DRaycaster
+<br>
+PolygonCollider2D
+<br>
+Rigidbody2D
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFH">&lt;- Previous</a>
+	<a href="#sectionFJ">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFJ">
+	<span class="label1">Terrain</span>
+	<section>
+		<p>
+			The Terrain module provides support for the following objects
+<br>
+
+<br>
+DetailPrototype
+<br>
+Terrain
+<br>
+TerrainCollider
+<br>
+TerrainData
+<br>
+TerrainLayer
+<br>
+TreeInstance
+<br>
+TreePrototype
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFI">&lt;- Previous</a>
+	<a href="#sectionFK">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFK">
+	<span class="label1">Tile Maps</span>
+	<section>
+		<p>
+			The Tiles module provides support for the following objects
+<br>
+
+<br>
+Tile
+<br>
+TileAnimationData
+<br>
+TileData
+<br>
+Tilemap
+<br>
+TilemapCollider2D
+<br>
+TilemapRenderer
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFJ">&lt;- Previous</a>
+	<a href="#sectionFL">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionFL">
+	<span class="label1">UI</span>
+	<section>
+		<p>
+			The UI module provides support for the following objects
+<br>
+
+<br>
+IMGUI
+<br>
+
+<br>
+Button
+<br>
+Canvas
+<br>
+CanvasRenderer
+<br>
+CanvasScaler
+<br>
+CharacterInfo
+<br>
+ColorBlock
+<br>
+Dropdown
+<br>
+EventSystem
+<br>
+Font
+<br>
+FontData
+<br>
+GraphicRaycaster
+<br>
+Image
+<br>
+Inputfield
+<br>
+Mask
+<br>
+Navigation
+<br>
+OptionData
+<br>
+OptionSataList
+<br>
+RawImage
+<br>
+RectTransform
+<br>
+Scrollbar
+<br>
+ScrollRect
+<br>
+Slider
+<br>
+SppriteState
+<br>
+StandaloneInputModule
+<br>
+Text
+<br>
+Toggle
+<br>
+UIVertex
+<br>
+
+<br>
+TMP
+<br>
+
+<br>
+TextMeshProUGUI
+<br>
+TMP_ColorGradient
+<br>
+TMP_Dropdown
+<br>
+TMP_Inputfield
+<br>
+TMP_Sprite
+<br>
+TMP_Style
+<br>
+TMP_StyleSheet
+<br>
+TMP_Text
+<br>
+VertexGradient
+<br>
+
+<br>
+This module also includes the Events add-on module
+<br>
+<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFK">&lt;- Previous</a>
+	<a href="#sectionG">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionE">&lt;- Previous</a>
+	<a href="#sectionFA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionG" style="display: none;">
+	<h2>Example Code</h2>
+	<section>
+		<p>
+			A demonstration project with explanation can be found at <a href="https://stevesmith.software/Home/Tutorial" target="_blank">Save for Unity Demonstration Project</a>
+		</p>
+<div class="subcontent" id="sectionGA">
+	<span class="label1">Simple Save and Load</span>
+	<section>
+		<p>
+			</p><p></p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">.</span><span class="typ">SceneManagement</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SaveAndLoad</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">MonoBehaviour</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">enum</span><span class="pln"> </span><span class="typ">Run</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">None</span><span class="pun">,</span><span class="pln">
+        </span><span class="typ">Save</span><span class="pun">,</span><span class="pln">
+        </span><span class="typ">Load</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Run</span><span class="pln"> saveOrLoad</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> saveFileName</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Start</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">Scene</span><span class="pln"> scene </span><span class="pun">=</span><span class="pln"> </span><span class="typ">SceneManager</span><span class="pun">.</span><span class="typ">GetActiveScene</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">saveOrLoad </span><span class="pun">==</span><span class="pln"> </span><span class="typ">Run</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="com">//Save.Trace = true;</span><span class="pln">
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">Scene</span><span class="pun">(</span><span class="pln">scene</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+        </span><span class="kwd">else</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">saveOrLoad </span><span class="pun">==</span><span class="pln"> </span><span class="typ">Run</span><span class="pun">.</span><span class="typ">Load</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="com">//Load.Trace = true;</span><span class="pln">
+                </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+                load</span><span class="pun">.</span><span class="typ">Scene</span><span class="pun">(</span><span class="pln">scene</span><span class="pun">);</span><span class="pln">
+                load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+Add this code to an empty game object and tag it 'NoSave'. Select the required function and file name in the inspector
+<br>
+<p></p>
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionG">&lt;- Previous</a>
+	<a href="#sectionGB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionGB">
+	<span class="label1">Save and Load Multiple Objects</span>
+	<section>
+		<p>
+			</p><p></p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Collections</span><span class="pun">.</span><span class="typ">Generic</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SaveObjects</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">MonoBehaviour</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> saveFileName</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">List</span><span class="str">&lt;int&gt;</span><span class="pln"> dangerousAlliance </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="str">&lt;int&gt;</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">List</span><span class="str">&lt;int&gt;</span><span class="pln"> dangerousCorporation </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="str">&lt;int&gt;</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">PlayerData</span><span class="pun">&gt;</span><span class="pln"> playersDataLifeTime </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">PlayerData</span><span class="pun">&gt;();</span><span class="pln">
+
+    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">SaveIt</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">//Save.Trace = true;</span><span class="pln">
+        </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+        save</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="pln">dangerousAlliance</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span><span class="pln"> </span><span class="com">// Keep the Save file open</span><span class="pln">
+        save</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="pln">dangerousCorporation</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span><span class="pln"> </span><span class="com">// Keep Save the file open</span><span class="pln">
+        save</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="pln">playersDataLifeTime</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span><span class="pln"> </span><span class="com">// Keep Save the file open</span><span class="pln">
+        save</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span><span class="pln"> </span><span class="com">// Must Close the file because we kept it open</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">LoadIt</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="com">//Load.Trace = true;</span><span class="pln">
+        </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">List</span><span class="str">&lt;object&gt;</span><span class="pln"> loadedObjects </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">();</span><span class="pln"> </span><span class="com">// The List is the same sequence as the Save</span><span class="pln">
+        dangerousAlliance </span><span class="pun">=</span><span class="pln"> loadedObjects</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> </span><span class="typ">List</span><span class="str">&lt;int&gt;</span><span class="pun">;</span><span class="pln">
+        dangerousCorporation </span><span class="pun">=</span><span class="pln"> loadedObjects</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> </span><span class="typ">List</span><span class="str">&lt;int&gt;</span><span class="pun">;</span><span class="pln">
+        playersDataLifeTime </span><span class="pun">=</span><span class="pln"> loadedObjects</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">PlayerData</span><span class="pun">&gt;;</span><span class="pln">
+        load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">[</span><span class="typ">System</span><span class="pun">.</span><span class="typ">Serializable</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">PlayerData</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+    </span><span class="kwd">public</span><span class="pln"> ind id </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Steve"</span><span class="pun">;</span><span class="pln"> 
+</span><span class="pun">}</span><span class="pln">
+</span></code></pre>
+Select the required file name in the inspector
+<br>
+<p></p>
+<br>
+<p></p>
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionGA">&lt;- Previous</a>
+	<a href="#sectionGC">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionGC">
+	<span class="label1">Save Game Objects</span>
+	<section>
+		<p>
+			</p><p></p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Collections</span><span class="pun">.</span><span class="typ">Generic</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SaveGameObjects</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">MonoBehaviour</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> saveFileName</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">GameObject</span><span class="pun">&gt;</span><span class="pln"> enemies</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Start</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Load</span><span class="pun">.</span><span class="typ">Exists</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+            enemies </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">GameObject</span><span class="pun">();</span><span class="pln">
+            load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">OnApplicationQuit</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">enemies</span><span class="pun">.</span><span class="typ">Count</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">GameObject</span><span class="pun">(</span><span class="pln">enemies</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Save</span><span class="pun">.</span><span class="typ">Delete</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code></pre>
+    Note: OnApplicationQuit does not run in the Editor only in a Build
+<br>
+<p></p>
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionGB">&lt;- Previous</a>
+	<a href="#sectionGD">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionGD">
+	<span class="label1">Complex Save</span>
+	<section>
+		<p>
+			An example of saving and loading a dictioinary of inherited classes<br>
+		</p>
+<div class="subcontent" id="sectionGDA">
+	<span class="label1">Save Data</span>
+	<section>
+		<p>
+			</p><p></p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">enum</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">None</span><span class="pun">,</span><span class="pln">
+    </span><span class="typ">Enemy</span><span class="pun">,</span><span class="pln">
+    NPC</span><span class="pun">,</span><span class="pln">
+    </span><span class="typ">Player</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">[</span><span class="typ">System</span><span class="pun">.</span><span class="typ">Serializable</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">abstract</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">BaseClass</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pln"> classType</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> </span><span class="typ">Name</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">[</span><span class="typ">System</span><span class="pun">.</span><span class="typ">Serializable</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Player</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">BaseClass</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Health</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Wealth</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Wisdom</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">[</span><span class="typ">System</span><span class="pun">.</span><span class="typ">Serializable</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> NPC </span><span class="pun">:</span><span class="pln"> </span><span class="typ">BaseClass</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln"> </span><span class="typ">Active</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">[</span><span class="typ">System</span><span class="pun">.</span><span class="typ">Serializable</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Enemy</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">BaseClass</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Damage</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Points</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code></pre>
+Note: All classes must be Serializable
+<br>
+<p></p>
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionGD">&lt;- Previous</a>
+	<a href="#sectionGDB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionGDB">
+	<span class="label1">Saveable Component</span>
+	<section>
+		<p>
+			</p><p></p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Saveable</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">MonoBehaviour</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">BaseClass</span><span class="pln"> baseClass</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Start</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        baseClass </span><span class="pun">=</span><span class="pln"> </span><span class="typ">SaveComplex</span><span class="pun">.</span><span class="typ">RestoreFromSave</span><span class="pun">(</span><span class="pln">tag</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">);</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">baseClass </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           </span><span class="com">// If no save data was found create a new save class and register it</span><span class="pln">
+            </span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">tag</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"Player"</span><span class="pun">:</span><span class="pln">
+                    baseClass </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Player</span><span class="pun">();</span><span class="pln">
+                    baseClass</span><span class="pun">.</span><span class="pln">classType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pun">.</span><span class="typ">Player</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"NPC"</span><span class="pun">:</span><span class="pln">
+                    baseClass </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> NPC</span><span class="pun">();</span><span class="pln">
+                    baseClass</span><span class="pun">.</span><span class="pln">classType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pun">.</span><span class="pln">NPC</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"Enemy"</span><span class="pun">:</span><span class="pln">
+                    baseClass </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Enemy</span><span class="pun">();</span><span class="pln">
+                    baseClass</span><span class="pun">.</span><span class="pln">classType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pun">.</span><span class="typ">Enemy</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            baseClass</span><span class="pun">.</span><span class="typ">Name</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> gameObject</span><span class="pun">.</span><span class="pln">name</span><span class="pun">;</span><span class="pln">
+            </span><span class="typ">SaveComplex</span><span class="pun">.</span><span class="typ">AddToSave</span><span class="pun">(</span><span class="pln">baseClass</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+Note: Add this component to every game object to be saved
+<br>
+<p></p>
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionGDA">&lt;- Previous</a>
+	<a href="#sectionGDC">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionGDC">
+	<span class="label1">Save and Load</span>
+	<section>
+		<p>
+			</p><p></p><pre style="width:100%"><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Collections</span><span class="pun">.</span><span class="typ">Generic</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">UnityEngine</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">SSSoftware</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SaveComplex</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">MonoBehaviour</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> saveFileName</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">Dictionary</span><span class="pun">&lt;</span><span class="typ">ClassType</span><span class="pun">,</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">BaseClass</span><span class="pun">&gt;&gt;</span><span class="pln"> saveData </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Dictionary</span><span class="pun">&lt;</span><span class="typ">ClassType</span><span class="pun">,</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">BaseClass</span><span class="pun">&gt;&gt;();</span><span class="pln">
+
+    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Awake</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">//Load.Trace = true;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Load</span><span class="pun">.</span><span class="typ">Exists</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Load</span><span class="pln"> load </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Load</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">List</span><span class="str">&lt;object&gt;</span><span class="pln"> loadedObjects </span><span class="pun">=</span><span class="pln"> load</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">();</span><span class="pln">
+            saveData </span><span class="pun">=</span><span class="pln"> loadedObjects</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> </span><span class="typ">Dictionary</span><span class="pun">&lt;</span><span class="typ">ClassType</span><span class="pun">,</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">BaseClass</span><span class="pun">&gt;&gt;;</span><span class="pln">
+            load</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">OnApplicationQuit</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">//Save.Trace = true;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">saveData</span><span class="pun">.</span><span class="typ">Count</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Save</span><span class="pln"> save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Save</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+            save</span><span class="pun">.</span><span class="typ">Object</span><span class="pun">(</span><span class="pln">saveData</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Save</span><span class="pun">.</span><span class="typ">Delete</span><span class="pun">(</span><span class="pln">saveFileName</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">AddToSave</span><span class="pun">(</span><span class="typ">BaseClass</span><span class="pln"> baseClass</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">saveData</span><span class="pun">.</span><span class="typ">ContainsKey</span><span class="pun">(</span><span class="pln">baseClass</span><span class="pun">.</span><span class="pln">classType</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            saveData</span><span class="pun">.</span><span class="typ">Add</span><span class="pun">(</span><span class="pln">baseClass</span><span class="pun">.</span><span class="pln">classType</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">BaseClass</span><span class="pun">&gt;());</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        saveData</span><span class="pun">[</span><span class="pln">baseClass</span><span class="pun">.</span><span class="pln">classType</span><span class="pun">].</span><span class="typ">Add</span><span class="pun">(</span><span class="pln">baseClass</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">BaseClass</span><span class="pln"> </span><span class="typ">RestoreFromSave</span><span class="pun">(</span><span class="kwd">string</span><span class="pln"> tag</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> name</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">ClassType</span><span class="pln"> classType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pun">.</span><span class="kwd">None</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">BaseClass</span><span class="pun">&gt;</span><span class="pln"> baseClasses </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+
+        </span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">tag</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"Player"</span><span class="pun">:</span><span class="pln">
+                classType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pun">.</span><span class="typ">Player</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"NPC"</span><span class="pun">:</span><span class="pln">
+                classType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pun">.</span><span class="pln">NPC</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"Enemy"</span><span class="pun">:</span><span class="pln">
+                classType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ClassType</span><span class="pun">.</span><span class="typ">Enemy</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">saveData</span><span class="pun">.</span><span class="typ">ContainsKey</span><span class="pun">(</span><span class="pln">classType</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            baseClasses </span><span class="pun">=</span><span class="pln"> saveData</span><span class="pun">[</span><span class="pln">classType</span><span class="pun">];</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">baseClasses </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="typ">BaseClass</span><span class="pln"> baseClass </span><span class="kwd">in</span><span class="pln"> baseClasses</span><span class="pun">)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">baseClass</span><span class="pun">.</span><span class="typ">Name</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> name</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> baseClass</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+Note: The Load runs in Awake so the data is loaded before the Saveable component requests it
+<br>
+<p></p>
+<br>
+<br>
+		<p></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionGDB">&lt;- Previous</a>
+	<a href="#sectionH">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionGC">&lt;- Previous</a>
+	<a href="#sectionGDA">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionFL">&lt;- Previous</a>
+	<a href="#sectionGA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionH" style="display: none;">
+	<h2>Supported Data Types</h2>
+	<section>
+		<p>
+			
+		</p>
+<div class="subcontent" id="sectionHA">
+	<span class="label1">C# Data types</span>
+	<section>
+		<p>
+			The following C# data types are supported by Save for Unity
+<br>
+
+<br>
+Primitive Data Types
+<br>
+
+<br>
+byte
+<br>
+sbyte
+<br>
+char
+<br>
+ushort
+<br>
+short
+<br>
+uint
+<br>
+int
+<br>
+ulong
+<br>
+long
+<br>
+decimal
+<br>
+float
+<br>
+double
+<br>
+string
+<br>
+
+<br>
+C# Classes
+<br>
+
+<br>
+User defined classes must have the [Serializable] attribute.
+<br>
+DateTime
+<br>
+TimeSpan
+<br>
+
+<br>
+Array<t> where T is a C# primitive type
+<br>
+This includes
+<br>
+Array[] with any number of ranks
+<br>
+and jagged arrays of any depth
+<br>
+
+<br>
+List<t> where T is a C# primitive type
+<br>
+
+<br>
+Dictionary<t1,t2> where T1 and T2 are C# primitive types
+<br>
+
+<br>
+To have these data types extended please refer to Change Requests<br>
+		</t1,t2></t></t></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionH">&lt;- Previous</a>
+	<a href="#sectionHB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionHB">
+	<span class="label1">Unity Data types</span>
+	<section>
+		<p>
+			The following Unity data types are supported by Save for Unity
+<br>
+
+<br>
+Vector2
+<br>
+Vector2Int
+<br>
+Vector3
+<br>
+Vector3Int
+<br>
+Vector4
+<br>
+Quaternion
+<br>
+Color
+<br>
+Color32
+<br>
+Rect
+<br>
+Rectint
+<br>
+Matrix4x4
+<br>
+Bounds
+<br>
+BoundsInt
+<br>
+BoneWeight
+<br>
+BoneWeight1
+<br>
+KeyFrame
+<br>
+
+<br>
+The utility also supports
+<br>
+
+<br>
+Array<t> where T is one of the above.
+<br>
+This includes
+<br>
+Array[]
+<br>
+Array[,]
+<br>
+Array[,,]
+<br>
+And jagged arrays
+<br>
+
+<br>
+List<t> where T is one of the above
+<br>
+
+<br>
+Dictionary<t1,t2> where T1 and/or T2 are one of the above or C# primitive types
+<br>
+
+<br>
+NativeArrayt<t> where T is one of the above or a C# primitive type
+<br>
+
+<br>
+To have these data types extended please refer to Change Requests
+<br>
+<br>
+		</t></t1,t2></t></t></p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionHA">&lt;- Previous</a>
+	<a href="#sectionI">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionGDC">&lt;- Previous</a>
+	<a href="#sectionHA">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="content" id="sectionI" style="display: none;">
+	<h2>Additional Information</h2>
+	<section>
+		<p>
+			
+		</p>
+<div class="subcontent" id="sectionIA">
+	<span class="label1">Support</span>
+	<section>
+		<p>
+			Support can only be offered to users using Unity LTS versions
+<br>
+
+<br>
+Please contact SteveSmith.Software via one of the following channels
+<br>
+
+<br>
+To file a Bug Report: SteveSmith.Software Choose the Contact tab and login as guest
+<br>
+
+<br>
+Email: Support@SteveSmith.Software
+<br>
+
+<br>
+Discord: Join our discord channel at SteveSmith.Software on discord<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionI">&lt;- Previous</a>
+	<a href="#sectionIB">Next -&gt;</a>
+	</p><br><br>
+</div>
+<div class="subcontent" id="sectionIB">
+	<span class="label1">Change Requests</span>
+	<section>
+		<p>
+			Save for Unity aims to be the ultimate serializer/deserialzer for Unity projects.
+<br>
+
+<br>
+Any request for additional data type implementation or support will be treated as a matter of urgency
+<br>
+
+<br>
+Please email Support@SteveSmith.Software with your request<br>
+		</p>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionIA">&lt;- Previous</a>
+	<a href="#sectionA">Next -&gt;</a>
+	</p><br><br>
+</div>
+	</section>
+	<p style="text-align:right">
+	<a href="#sectionHB">&lt;- Previous</a>
+	<a href="#sectionIA">Next -&gt;</a>
+	</p><br><br>
+</div>
+
+	<footer class="footer"><b>© SteveSmith.Software</b> 2018. All Rights Reserved.</footer>
+
+
+
+</body></html>
