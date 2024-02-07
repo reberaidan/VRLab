@@ -164,7 +164,7 @@ namespace OpenAI.Samples.Chat
                     assistantMessageContent.text += response.ToString().Replace("![Image](output.jpg)", string.Empty);
                 }
 
-                GenerateSpeech(response);
+                //GenerateSpeech(response);
             }
             catch (Exception e)
             {
