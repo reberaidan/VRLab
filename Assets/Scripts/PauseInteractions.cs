@@ -12,7 +12,9 @@ public class PauseInteractions : MonoBehaviour
 	
 	public GameObject PauseMenu;
 	public GameObject HelpMenu;
-	
+	public GameObject LabEquipment;
+	public MonoBehaviour XRGrabInteractable;
+
 	// Start is called before the first frame update
     public void Start()
     {
@@ -22,6 +24,8 @@ public class PauseInteractions : MonoBehaviour
 
 	public void ResumeClicked(){
 		PauseMenu.SetActive(false);
+		// enable the XRGrabInteractable script
+		XRGrabInteractable.enabled = false;
 	}
 	
 	public void HelpClicked(){
@@ -36,6 +40,7 @@ public class PauseInteractions : MonoBehaviour
 	public void ReturnClicked(){
 		HelpMenu.SetActive(false);
 		PauseMenu.SetActive(true);
+		
 	}
 	
 	void Update()

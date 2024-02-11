@@ -9,6 +9,8 @@ public class PressA : MonoBehaviour
 	public InputActionReference pressButton;
 	public GameObject PauseMenu;
 	public GameObject HelpMenu;
+	public GameObject LabEquipment;
+	public MonoBehaviour XRGrabInteractable;
 	
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,9 @@ public class PressA : MonoBehaviour
 	public void OpenPause(InputAction.CallbackContext obj){
 		PauseMenu.SetActive(true);
 		HelpMenu.SetActive(false);
+
+		// disable the XRGrabInteractable script
+		XRGrabInteractable.enabled = false;
 	}
 	
 	
