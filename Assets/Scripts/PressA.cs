@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PressA : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class PressA : MonoBehaviour
 	public GameObject PauseMenu;
 	public GameObject HelpMenu;
 	public GameObject LabEquipment;
-	public MonoBehaviour XRGrabInteractable;
+
 	
     // Start is called before the first frame update
     void Start()
@@ -32,8 +34,9 @@ public class PressA : MonoBehaviour
 		PauseMenu.SetActive(true);
 		HelpMenu.SetActive(false);
 
-		// disable the XRGrabInteractable script
-		XRGrabInteractable.enabled = false;
+		GameObject.Find("Beaker water (4)").GetComponent<XRGrabInteractable>().enabled = false;
+		GameObject.Find("Erlenmeyer_flask with water (3)").GetComponent<XRGrabInteractable>().enabled = false;
+		GameObject.Find("florence_flask with water (1)").GetComponent<XRGrabInteractable>().enabled = false;
 	}
 	
 	
