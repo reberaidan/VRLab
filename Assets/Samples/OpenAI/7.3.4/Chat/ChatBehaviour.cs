@@ -30,7 +30,14 @@ namespace OpenAI.Samples.Chat
         [SerializeField]
         private bool enableDebug;
 
-        public string inputText;
+        [SerializeField]
+        private Button submitButton;
+
+        [SerializeField]
+        private Button recordButton;
+
+        [SerializeField]
+        private TMP_InputField inputField;
 
         [SerializeField]
         private RectTransform contentArea;
@@ -92,7 +99,10 @@ namespace OpenAI.Samples.Chat
 
         private void OnValidate()
         {
+            inputField.Validate();
             contentArea.Validate();
+            submitButton.Validate();
+            recordButton.Validate();
             audioSource.Validate();
         }
 
@@ -105,6 +115,9 @@ namespace OpenAI.Samples.Chat
                 EnableDebug = enableDebug
             };
             conversation.AppendMessage(new Message(Role.System, systemPrompt));
+            inputField.onSubmit.AddListener(SubmitChat);
+            submitButton.onClick.AddListener(SubmitChat);
+            recordButton.onClick.AddListener(ToggleRecording);
         }
 
         private void OnDestroy()
@@ -118,15 +131,18 @@ namespace OpenAI.Samples.Chat
 
         private static bool isChatPending;
 
-        public async void SubmitChat()
+        private async void SubmitChat()
         {
-            if (isChatPending || string.IsNullOrWhiteSpace(inputText)) { return; }
+            if (isChatPending || string.IsNullOrWhiteSpace(inputField.text)) { return; }
             isChatPending = true;
 
-            conversation.AppendMessage(new Message(Role.User, inputText));
+            inputField.ReleaseSelection();
+            inputField.interactable = false;
+            submitButton.interactable = false;
+            conversation.AppendMessage(new Message(Role.User, inputField.text));
             var userMessageContent = AddNewTextMessageContent(Role.User);
-            userMessageContent.text = $"User: {inputText}";
-            inputText = string.Empty;
+            userMessageContent.text = $"User: {inputField.text}";
+            inputField.text = string.Empty;
             var assistantMessageContent = AddNewTextMessageContent(Role.Assistant);
             assistantMessageContent.text = "Assistant: ";
 
@@ -164,7 +180,12 @@ namespace OpenAI.Samples.Chat
             }
             finally
             {
-                
+                if (lifetimeCancellationTokenSource is { IsCancellationRequested: false })
+                {
+                    inputField.interactable = true;
+                    EventSystem.current.SetSelectedGameObject(inputField.gameObject);
+                    submitButton.interactable = true;
+                }
 
                 isChatPending = false;
             }
@@ -271,6 +292,7 @@ namespace OpenAI.Samples.Chat
             }
             else
             {
+                inputField.interactable = false;
                 RecordingManager.StartRecording<WavEncoder>(callback: ProcessRecording);
             }
         }
@@ -286,6 +308,7 @@ namespace OpenAI.Samples.Chat
 
             try
             {
+                recordButton.interactable = false;
                 var request = new AudioTranscriptionRequest(clip, temperature: 0.1f, language: "en");
                 var userInput = await openAI.AudioEndpoint.CreateTranscriptionAsync(request, lifetimeCancellationTokenSource.Token);
 
@@ -294,14 +317,17 @@ namespace OpenAI.Samples.Chat
                     Debug.Log(userInput);
                 }
 
+                inputField.text = userInput;
                 SubmitChat();
             }
             catch (Exception e)
             {
                 Debug.LogError(e);
+                inputField.interactable = true;
             }
             finally
             {
+                recordButton.interactable = true;
             }
         }
     }
