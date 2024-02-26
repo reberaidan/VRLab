@@ -42,6 +42,9 @@ namespace OpenAI.Samples.Chat
         private AudioSource audioSource;
 
         [SerializeField]
+        private Text insert;
+
+        [SerializeField]
         [TextArea(3, 10)]
         private string systemPrompt = "You are a helpful assistant.\n- If an image is requested then use \"![Image](output.jpg)\" to display it.";
 
@@ -125,10 +128,10 @@ namespace OpenAI.Samples.Chat
 
             conversation.AppendMessage(new Message(Role.User, inputText));
             var userMessageContent = AddNewTextMessageContent(Role.User);
-            userMessageContent.text = $"User: {inputText}";
+            //insert.text += $"User: {inputText}";
             inputText = string.Empty;
             var assistantMessageContent = AddNewTextMessageContent(Role.Assistant);
-            assistantMessageContent.text = "Assistant: ";
+            //insert.text += "Assistant: ";
 
             try
             {
@@ -136,7 +139,7 @@ namespace OpenAI.Samples.Chat
                 var response = await openAI.ChatEndpoint.StreamCompletionAsync(request, resultHandler: deltaResponse =>
                 {
                     if (deltaResponse?.FirstChoice?.Delta == null) { return; }
-                    assistantMessageContent.text += deltaResponse.FirstChoice.Delta.ToString();
+                    insert.text += deltaResponse.FirstChoice.Delta.ToString();
                     scrollView.verticalNormalizedPosition = 0f;
                 }, lifetimeCancellationTokenSource.Token);
 
@@ -145,7 +148,7 @@ namespace OpenAI.Samples.Chat
                 if (response.FirstChoice.FinishReason == "tool_calls")
                 {
                     response = await ProcessToolCallAsync(response);
-                    assistantMessageContent.text += response.ToString().Replace("![Image](output.jpg)", string.Empty);
+                    insert.text += response.ToString().Replace("![Image](output.jpg)", string.Empty);
                 }
 
                 //GenerateSpeech(response);
