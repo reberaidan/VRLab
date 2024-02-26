@@ -7,7 +7,7 @@ public class FeedbackRecorder : MonoBehaviour
 {
     public int itemsDropped = 0;
 
-    public string[] itemDroppedNames = new string[] { };
+    public List<string> itemDroppedNames = new List<string> { };
 
     public int burns = 0;
 
@@ -38,6 +38,6 @@ public class FeedbackRecorder : MonoBehaviour
         conversation.inputText += "I dropped " + itemsDropped.ToString() + " items during the lab. ";
 
 
-        conversation.inputText += "The most frequently dropped item: beaker";
+        //  conversation.inputText += "The most frequently dropped item: beaker";
 	}
 }

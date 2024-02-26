@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5118858845010122229}
   m_Layer: 0
   m_Name: Graduated_Cylinder
-  m_TagString: Untagged
+  m_TagString: Equipment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

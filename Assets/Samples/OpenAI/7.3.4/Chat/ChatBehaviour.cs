@@ -191,9 +191,9 @@ namespace OpenAI.Samples.Chat
 
                 try
                 {
-                    var imageGenerationRequest = JsonConvert.DeserializeObject<ImageGenerationRequest>(toolCall.Function.Arguments.ToString());
+                    /*var imageGenerationRequest = JsonConvert.DeserializeObject<ImageGenerationRequest>(toolCall.Function.Arguments.ToString());
                     var imageResult = await GenerateImageAsync(imageGenerationRequest);
-                    AddNewImageContent(imageResult);
+                    AddNewImageContent(imageResult);*/
                     conversation.AppendMessage(new Message(toolCall, "{\"result\":\"completed\"}"));
                     var toolCallRequest = new ChatRequest(conversation.Messages, tools: assistantTools, toolChoice: "auto");
                     toolCallResponse = await openAI.ChatEndpoint.GetCompletionAsync(toolCallRequest);
