@@ -22,6 +22,10 @@ public class MainMenu : MonoBehaviour
         titleMenu.SetActive(false);
         lessonMenu.SetActive(true);
     }
+	
+	public void TutorialLabClicked(){
+		SceneManager.LoadScene("TutorialLab");
+	}
 
     public void ExitClicked() 
     {
