@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: -4638463196901830815}
   - component: {fileID: -1899563769505462492}
   - component: {fileID: 6218061890060611988}
+  - component: {fileID: 331325402063785202}
   m_Layer: 0
   m_Name: Beaker
-  m_TagString: Untagged
+  m_TagString: Equipment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,3 +288,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4370586879743159886, guid: 44fed6aff454809469effaac1a0b86ed, type: 3}
+--- !u!114 &331325402063785202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375499282934692910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98aad9a60c347c141aac30255a7d998e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: 0
+  contents: 
+  boilingPoint: 0
+  roomTemp: 0
