@@ -8,6 +8,10 @@ TagManager:
   - RoomManager
   - Heater
   - Equipment
+  - BaseLiquid
+  - HoldingBeaker
+  - pipette
+  - cleaning
   layers:
   - Default
   - TransparentFX
