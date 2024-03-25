@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pipette : MonoBehaviour
@@ -16,10 +17,10 @@ public class Pipette : MonoBehaviour
 	private void OnTriggerEnter(Collider other)
 	{
 		Material color;
-		if (other.CompareTag("BaseLiquid"))
+		if (other.gameObject.CompareTag("BaseLiquid"))
 		{
 			isFilled = true;
-			color = other.GetComponent<MeshRenderer>().material;
+			color = other.gameObject.GetComponent<MeshRenderer>().material;
 			var colorCode = color.color;
 			gameObject.GetComponent<MeshRenderer>().material = filled;
 			gameObject.GetComponent<MeshRenderer>().material.color = colorCode;
@@ -29,12 +30,12 @@ public class Pipette : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("HoldingBeaker"))
+		if (other.gameObject.CompareTag("HoldingBeaker"))
 		{
 			isFilled = false;
-			gameObject.GetComponent<MeshRenderer>().material = empty;
 			gameObject.GetComponent<MeshRenderer>().material.color = originalColor;
 
 		}
 	}
+	
 }

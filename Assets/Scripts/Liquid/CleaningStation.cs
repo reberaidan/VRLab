@@ -1,27 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class CleaningStation : MonoBehaviour
 {
     [SerializeField] private ParticleSystem water;
     // Start is called before the first frame update
-    void Start()
-    {
-        water.gameObject.SetActive(false);
-    }
+
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("HoldingBeaker"))
-		{
-            water.gameObject.SetActive(true);
-		}
+		water.Play();
 	}
+
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("HoldingBeaker"))
-		{
-			water.gameObject.SetActive(false);
-		}
+		water.Stop();
 	}
 }

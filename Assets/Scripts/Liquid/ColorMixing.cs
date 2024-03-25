@@ -9,23 +9,23 @@ public class ColorMixing : MonoBehaviour
 
     [SerializeField] private Material empty;
     [SerializeField] private Material filled;
-    // Start is called before the first frame update
+	// Start is called before the first frame update
 
 	private void OnTriggerEnter(Collider other)
 	{
-        if (other.CompareTag("pipette"))
+        print(other.name);
+        if (other.gameObject.CompareTag("pipette"))
         {
-            if (other.GetComponent<Pipette>().isFilled)
+            if (other.gameObject.GetComponent<Pipette>().isFilled)
             {
-                mColors.Add(other.GetComponent<Renderer>().material.color);
+                mColors.Add(other.gameObject.GetComponent<Renderer>().material.color);
                 gameObject.GetComponent<MeshRenderer>().material.color = getColor();
             }
 
         }
-        else if (other.CompareTag("cleaning"))
+        else if (other.gameObject.CompareTag("cleaning"))
         {
-            mColors.Clear();
-            gameObject.GetComponent<MeshRenderer>().material = empty;
+            cleanGlass();
         }
 	}
 
@@ -52,4 +52,10 @@ public class ColorMixing : MonoBehaviour
 
         return returnColor;
     }
+
+    public void cleanGlass()
+    {
+		mColors.Clear();
+		gameObject.GetComponent<MeshRenderer>().material = empty;
+	}
 }
