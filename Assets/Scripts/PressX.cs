@@ -16,8 +16,7 @@ public class PressX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        specialInteractables.Add(GameObject.Find("Beaker").GetComponent<XRGrabInteractable>());
-        specialInteractables.Add(GameObject.Find("Erlenmeyer_flask").GetComponent<XRGrabInteractable>());
+
     }
 
     public void OnEnable()
