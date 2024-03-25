@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Scenes/TutorialLab.unity
     guid: 2103cb12762d5d34ab43d5ab8b6c67a5
+  - enabled: 1
+    path: Assets/Scripts/Scenes/Lab1.unity
+    guid: d6d2c0cba0aa85e42b073409e446eba3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
