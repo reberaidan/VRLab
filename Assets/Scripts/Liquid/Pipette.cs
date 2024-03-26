@@ -17,7 +17,7 @@ public class Pipette : MonoBehaviour
 	private void OnTriggerEnter(Collider other)
 	{
 		Material color;
-		if (other.gameObject.CompareTag("BaseLiquid"))
+		if (other.gameObject.CompareTag("BaseLiquid") && !isFilled)
 		{
 			isFilled = true;
 			color = other.gameObject.GetComponent<MeshRenderer>().material;
@@ -30,7 +30,7 @@ public class Pipette : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject.CompareTag("HoldingBeaker"))
+		if (other.gameObject.CompareTag("HoldingBeaker") && isFilled)
 		{
 			isFilled = false;
 			gameObject.GetComponent<MeshRenderer>().material.color = originalColor;

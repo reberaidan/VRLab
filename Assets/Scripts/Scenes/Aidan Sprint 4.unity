@@ -1931,26 +1931,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 515849397}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &519631666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1763347166810072313, guid: 24c728c68968f6447b856666f27564a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 981874268}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &519631671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519631666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5663cf70261c6d84ba8275e0cb7de219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  empty: {fileID: 2100000, guid: 62dad06c47d1d1a448901a67f077f0b6, type: 2}
-  filled: {fileID: 2100000, guid: 94c11be5b5b74c440a5c2fc75dc65d88, type: 2}
 --- !u!1 &560471476
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,46 +3507,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 588103063}
     m_Modifications:
-    - target: {fileID: 503942100278739264, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1763347166810072313, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1763347166810072313, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_TagString
-      value: HoldingBeaker
-      objectReference: {fileID: 0}
-    - target: {fileID: 4628649588763942296, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 62dad06c47d1d1a448901a67f077f0b6, type: 2}
-    - target: {fileID: 6640451228319455267, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Height
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6640451228319455267, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6640451228319455267, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 6640451228319455267, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3622,19 +3562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beaker water
       objectReference: {fileID: 0}
-    - target: {fileID: 9028627854349766800, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1763347166810072313, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 519631671}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c728c68968f6447b856666f27564a5, type: 3}
 --- !u!4 &981874269 stripped
 Transform:
@@ -4575,12 +4506,12 @@ PrefabInstance:
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -4590,17 +4521,17 @@ PrefabInstance:
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 376
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.5
       objectReference: {fileID: 0}
     - target: {fileID: 4422659089949380333, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
