@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ClipBoard : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> instructions;
+    [SerializeField] public List<GameObject> instructions;
+    [SerializeField] private FeedbackRecorder feedbackRecorder;
+    [SerializeField] private ColorMixing centerBeaker;
     private int currentStep = 0;
+    private bool feedbackGiven = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +20,22 @@ public class ClipBoard : MonoBehaviour
         instructions[0].SetActive(true);
     }
 
-    public void flip(int completedInstruction)
+    public bool flip(int completedInstruction)
     {
-        if(completedInstruction == currentStep){
+        if(completedInstruction == currentStep && !feedbackGiven){
+            if(currentStep == instructions.Count-1)
+            {
+                feedbackRecorder.startFeedback();
+                feedbackGiven = true;
+                return true;
+            }
             instructions[currentStep].SetActive(false);
             instructions[currentStep+1].SetActive(true);
             currentStep++;
+            if (currentStep == instructions.Count - 1) { centerBeaker.targetColor.Clear(); }
+            return true;
         }
+        return false;
 
     }
 }
