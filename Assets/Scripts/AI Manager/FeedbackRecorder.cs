@@ -30,6 +30,10 @@ public class FeedbackRecorder : MonoBehaviour
 
         feedbackDropped();
 
+        feedbackLiquidMixed();
+
+        conversation.inputText += "What do you think of my performance? ";
+
         FeedbackField.SetActive(true);
         conversation.SubmitChat();
 	}
@@ -65,7 +69,7 @@ public class FeedbackRecorder : MonoBehaviour
     {
         if(liquidsAdded!= 0)
         {
-            conversation.inputText += "I added " + liquidsAdded.ToString() + " liquids to beakers during the lab.";
+            conversation.inputText += "I added " + liquidsAdded.ToString() + " liquids to beakers during the lab. ";
         }
     }
 
