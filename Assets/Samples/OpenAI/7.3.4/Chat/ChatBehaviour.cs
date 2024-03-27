@@ -110,7 +110,12 @@ namespace OpenAI.Samples.Chat
             conversation.AppendMessage(new Message(Role.System, systemPrompt));
         }
 
-        private void OnDestroy()
+
+		private void Start()
+		{
+			gameObject.SetActive(false);
+		}
+		private void OnDestroy()
         {
             lifetimeCancellationTokenSource.Cancel();
             lifetimeCancellationTokenSource.Dispose();

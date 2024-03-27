@@ -12,8 +12,7 @@ public class FloorDetection : MonoBehaviour
 	{
 		if (collision.collider.CompareTag("Equipment"))
 		{
-			AIManager.itemsDropped += 1;
-			AIManager.itemDroppedNames.Add(collision.collider.name);
+			AIManager.incrementDropped();
 		}
 	}
 

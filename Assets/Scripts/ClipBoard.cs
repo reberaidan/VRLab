@@ -8,6 +8,7 @@ public class ClipBoard : MonoBehaviour
     [SerializeField] private FeedbackRecorder feedbackRecorder;
     [SerializeField] private ColorMixing centerBeaker;
     private int currentStep = 0;
+    private bool feedbackGiven = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,11 @@ public class ClipBoard : MonoBehaviour
 
     public bool flip(int completedInstruction)
     {
-        print("determining to flip");
-        if(completedInstruction == currentStep){
-            print(currentStep);
-            print(instructions.Count - 1);
+        if(completedInstruction == currentStep && !feedbackGiven){
             if(currentStep == instructions.Count-1)
             {
                 feedbackRecorder.startFeedback();
+                feedbackGiven = true;
                 return true;
             }
             instructions[currentStep].SetActive(false);
@@ -36,7 +35,6 @@ public class ClipBoard : MonoBehaviour
             if (currentStep == instructions.Count - 1) { centerBeaker.targetColor.Clear(); }
             return true;
         }
-        print("not flipping");
         return false;
 
     }

@@ -27,8 +27,6 @@ public class ColorMixing : MonoBehaviour
             {
                 mColors.Add(other.gameObject.GetComponent<Renderer>().material.color);
                 gameObject.GetComponent<MeshRenderer>().material.color = getColor();
-                print("Targer Color " + targetColor[currentStep]);
-                print("Added Color " + mColors[mColors.Count - 1]);
                 if (targetColor[currentStep]== mColors[mColors.Count-1] || targetColor == mColors)
                 {
                     if (clipboard.flip(currentStep))
@@ -37,6 +35,7 @@ public class ColorMixing : MonoBehaviour
                     }
                 }
             }
+            GameObject.Find("AI Manager").GetComponent<FeedbackRecorder>().incrementLiquidMixed();
 
         }
         else if (other.gameObject.CompareTag("cleaning"))
@@ -44,14 +43,11 @@ public class ColorMixing : MonoBehaviour
             cleanGlass();
 			if (targetColor.Count == mColors.Count)
 			{
-                print("targetColor == mColors");
 				if (clipboard.flip(clipboard.instructions.Count-1))
 				{
-                    print("next stepping");
 					currentStep++;
 				}
 			}
-            print("clean glass");
 		}
 	}
 

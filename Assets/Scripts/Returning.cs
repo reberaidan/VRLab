@@ -17,7 +17,6 @@ public class Returning : MonoBehaviour
 	}
 	private void OnTriggerEnter(Collider other)
 	{
-		print("exiting bounds");
 		if (other.CompareTag("MainCamera")){
 			print("headset");
 			VRRig.transform.position = vrOrigin;

@@ -367,12 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d418cd2fdbdbdf4686dbab876472ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsDropped: 0
-  itemDroppedNames: []
-  burns: 0
-  itemsEaten: 0
-  itemEatenNames: []
   conversation: {fileID: 1596925882}
+  FeedbackField: {fileID: 1596925881}
 --- !u!4 &44195184
 Transform:
   m_ObjectHideFlags: 0
@@ -747,7 +743,11 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 2761812451827376738, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
     - {fileID: 3127728407087826087, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1596925885}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9014170785475729474, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -7329,7 +7329,7 @@ Transform:
   m_GameObject: {fileID: 681049397}
   serializedVersion: 2
   m_LocalRotation: {x: 0.33036613, y: 0.08852132, z: -0.24321029, w: 0.90767336}
-  m_LocalPosition: {x: 7.028821, y: 4.7622175, z: 2.3681316}
+  m_LocalPosition: {x: 5.227, y: 5.514, z: 2.999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7349,7 +7349,7 @@ Light:
   m_Color: {r: 0.6981132, g: 0.67806894, b: 0.5828587, a: 1}
   m_Intensity: 4.32
   m_Range: 8.575558
-  m_SpotAngle: 164.56323
+  m_SpotAngle: 67.85827
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -7884,7 +7884,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Put your beaker under the faucet to clean it.
+  m_text: "Now that we are done with the lab, we need to clean the beaker. Place
+    the beaker under the faucet to clean it. \n\nAfter you complete this step you
+    will be given feedback."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8287,7 +8289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add the blue liquid (beaker 5) to your beaker.
+  m_text: Using the same process as step 1, repeat with the blue liquid (beaker 5).
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8785,7 +8787,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add the red liquid (beaker 4) to the empty beaker.
+  m_text: Using the pipette on the table, tap the red liquid (beaker 4) to add the
+    red liquid to the pipette. Tap the empty beaker with the pipette to add the red
+    liquid.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9084,7 +9088,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bf1b930b1fba9db409872196db946d5c, type: 2}
+      objectReference: {fileID: 2100000, guid: 99512efd2771f2e489263f4fc19e5075, type: 2}
     - target: {fileID: 1157815733408451400, guid: 90dbb427ac5963541b1cdbc7520999e3,
         type: 3}
       propertyPath: m_Name
@@ -9253,6 +9257,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 214797796}
     m_Modifications:
+    - target: {fileID: 3733628848090633063, guid: 5946c1452d879cf4bb19e57f7179e519,
+        type: 3}
+      propertyPath: m_RetainTransformParent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8147169095362625088, guid: 5946c1452d879cf4bb19e57f7179e519,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10373,7 +10382,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bf1b930b1fba9db409872196db946d5c, type: 2}
+      objectReference: {fileID: 2100000, guid: 99512efd2771f2e489263f4fc19e5075, type: 2}
     - target: {fileID: 1157815733408451400, guid: 90dbb427ac5963541b1cdbc7520999e3,
         type: 3}
       propertyPath: m_Name
@@ -10528,6 +10537,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0876021, y: 4.3684187, z: 8.525151}
   m_Center: {x: -0.04380107, y: -0.14961815, z: 1.5108714}
+--- !u!4 &1533101074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 179465571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1544958751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10670,7 +10685,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1533101074}
     m_Modifications:
     - target: {fileID: 732877344778758187, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -10920,37 +10935,37 @@ PrefabInstance:
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.104
+      value: 1.524
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.011556517
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99993324
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.308
+      value: 0.089
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -10960,7 +10975,7 @@ PrefabInstance:
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 181.324
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -10970,17 +10985,22 @@ PrefabInstance:
     - target: {fileID: 4015128326712939855, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_Name
-      value: UI Sample
+      value: Feedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015128326712939855, guid: fd28f23af44f73f4a95e33435872ad15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -10990,17 +11010,17 @@ PrefabInstance:
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 376
       objectReference: {fileID: 0}
     - target: {fileID: 4220274215976610951, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.5
       objectReference: {fileID: 0}
     - target: {fileID: 4422659089949380333, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -11425,8 +11445,8 @@ MonoBehaviour:
     a reason this lab is important and what it demonstates. If the student made any
     mistakes tell them how they can improve in future labs. You will talk informally
     with the student, as though a regular conversation. At the end of your feedback
-    provide the student with a grade. If the student dropped zero items, congratulate
-    them."
+    provide the student with a grade. If any of the data you are given has zero things
+    associated with it, do not mention it to the student."
 --- !u!82 &1596925883
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11523,6 +11543,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!224 &1596925885 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4015128326712939851, guid: fd28f23af44f73f4a95e33435872ad15,
+    type: 3}
+  m_PrefabInstance: {fileID: 1596925877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1633791684
 GameObject:
   m_ObjectHideFlags: 0
@@ -12805,7 +12831,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bf1b930b1fba9db409872196db946d5c, type: 2}
+      objectReference: {fileID: 2100000, guid: 99512efd2771f2e489263f4fc19e5075, type: 2}
     - target: {fileID: 1157815733408451400, guid: 90dbb427ac5963541b1cdbc7520999e3,
         type: 3}
       propertyPath: m_Name
@@ -13118,7 +13144,7 @@ Transform:
   m_GameObject: {fileID: 1965666272}
   serializedVersion: 2
   m_LocalRotation: {x: 0.33036613, y: 0.08852132, z: -0.24321029, w: 0.90767336}
-  m_LocalPosition: {x: 6.566599, y: 4.4283304, z: 2.22373}
+  m_LocalPosition: {x: 5.037, y: 5.364, z: 3.009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13739,7 +13765,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bf1b930b1fba9db409872196db946d5c, type: 2}
+      objectReference: {fileID: 2100000, guid: 99512efd2771f2e489263f4fc19e5075, type: 2}
     - target: {fileID: 1157815733408451400, guid: 90dbb427ac5963541b1cdbc7520999e3,
         type: 3}
       propertyPath: m_Name
@@ -13842,6 +13868,5 @@ SceneRoots:
   - {fileID: 1175378420}
   - {fileID: 674080438}
   - {fileID: 179465571}
-  - {fileID: 1596925877}
   - {fileID: 919199779}
   - {fileID: 1807030425}
