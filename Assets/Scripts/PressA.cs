@@ -34,10 +34,9 @@ public class PressA : MonoBehaviour
 		PauseMenu.SetActive(true);
 		HelpMenu.SetActive(false);
 
-		GameObject.Find("Beaker water (4)").GetComponent<XRGrabInteractable>().enabled = false;
-		GameObject.Find("Erlenmeyer_flask with water (3)").GetComponent<XRGrabInteractable>().enabled = false;
-		GameObject.Find("florence_flask with water (1)").GetComponent<XRGrabInteractable>().enabled = false;
-	}
+		GameObject.Find("Lab Equipment").GetComponent<XRGrabInteractable>().enabled = false;
+        GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = false;
+    }
 	
 	
 

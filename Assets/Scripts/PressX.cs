@@ -9,16 +9,16 @@ public class PressX : MonoBehaviour
     public InputActionReference pressButton;
     public GameObject EquipmentCabinet;
 
-    private List<XRGrabInteractable> specialInteractables = new List<XRGrabInteractable>();
+    private List<XRGrabInteractable> interactables = new List<XRGrabInteractable>();
 
     private bool isEquipmentCabinetActive = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        specialInteractables.Add(GameObject.Find("Beakers").GetComponent<XRGrabInteractable>());
-        specialInteractables.Add(GameObject.Find("Erlenmeyer_flasks").GetComponent<XRGrabInteractable>());
-        specialInteractables.Add(GameObject.Find("Graduated_Cylinders").GetComponent<XRGrabInteractable>());
+        interactables.Add(GameObject.Find("Beakers").GetComponent<XRGrabInteractable>());
+        interactables.Add(GameObject.Find("Erlenmeyer_flasks").GetComponent<XRGrabInteractable>());
+        interactables.Add(GameObject.Find("Graduated_Cylinders").GetComponent<XRGrabInteractable>());
     }
 
     public void OnEnable()
@@ -45,23 +45,23 @@ public class PressX : MonoBehaviour
         }
         else
         {
-            // Disable interactables that are not in the special list when the cabinet is closed
-            DisableNonSpecialInteractables();
+            // Disable interactables when the cabinet is closed
+            DisableNonInteractables();
         }
     }
 
     private void EnableAllInteractables()
     {
-        foreach (var interactable in specialInteractables)
+        foreach (var interactable in interactables)
         {
             interactable.enabled = true;
         }
     }
 
-    private void DisableNonSpecialInteractables()
+    private void DisableNonInteractables()
     {
-        // Disable all interactables that are not in the special list
-        foreach (var interactable in specialInteractables)
+        // Disable all interactables that are not in the list
+        foreach (var interactable in interactables)
         {
             if (!interactable.isSelected)
             {
