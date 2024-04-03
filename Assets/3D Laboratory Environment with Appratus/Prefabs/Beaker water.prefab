@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9028627854349766800}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -298,8 +298,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2051020056121483997, guid: a572e70971ff81f4992e8360d5356395,
         type: 3}
+      propertyPath: m_Height
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051020056121483997, guid: a572e70971ff81f4992e8360d5356395,
+        type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051020056121483997, guid: a572e70971ff81f4992e8360d5356395,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051020056121483997, guid: a572e70971ff81f4992e8360d5356395,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1296044121322356712, guid: a572e70971ff81f4992e8360d5356395,
         type: 3}
@@ -361,16 +376,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beaker liquid
       objectReference: {fileID: 0}
+    - target: {fileID: 2870593904137413113, guid: a572e70971ff81f4992e8360d5356395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870593904137413113, guid: a572e70971ff81f4992e8360d5356395,
+        type: 3}
+      propertyPath: m_TagString
+      value: HoldingBeaker
+      objectReference: {fileID: 0}
     - target: {fileID: 9192562976067721368, guid: a572e70971ff81f4992e8360d5356395,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d987ec024d9a90d4c8deb0ba94e48b99, type: 2}
+      objectReference: {fileID: 2100000, guid: 62dad06c47d1d1a448901a67f077f0b6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2870593904137413113, guid: a572e70971ff81f4992e8360d5356395,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5278549135014264566}
   m_SourcePrefab: {fileID: 100100000, guid: a572e70971ff81f4992e8360d5356395, type: 3}
+--- !u!1 &1763347166810072313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2870593904137413113, guid: a572e70971ff81f4992e8360d5356395,
+    type: 3}
+  m_PrefabInstance: {fileID: 4588832761785402624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5278549135014264566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763347166810072313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5663cf70261c6d84ba8275e0cb7de219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  empty: {fileID: 2100000, guid: 62dad06c47d1d1a448901a67f077f0b6, type: 2}
+  filled: {fileID: 2100000, guid: 94c11be5b5b74c440a5c2fc75dc65d88, type: 2}
 --- !u!4 &3337930760547089128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1296044121322356712, guid: a572e70971ff81f4992e8360d5356395,
