@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8544525041584254774}
   m_Layer: 0
   m_Name: Liquid
-  m_TagString: Untagged
+  m_TagString: pipette
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -118,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d243892e9f2ac4290044d06cb8b88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  empty: {fileID: 2100000, guid: 62dad06c47d1d1a448901a67f077f0b6, type: 2}
+  filled: {fileID: 2100000, guid: 94c11be5b5b74c440a5c2fc75dc65d88, type: 2}
+  isFilled: 0
 --- !u!1001 &9216432962016983867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,52 +132,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.01
+      value: 0.019999998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.01
+      value: 0.019999998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.959355
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.1714001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5.8193574
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.5809928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.5809928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.40304765
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.40304765
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}
@@ -200,6 +203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pipet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Equipment
       objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: 0c56fb30a4d655f4bb5dbb748443ac3d,
         type: 3}

@@ -39,7 +39,11 @@ public class PressA : MonoBehaviour
 		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
 		foreach (var item in labEquipment)
 		{
-			item.GetComponent<XRGrabInteractable>().enabled = !isPaused;
+			var comp = item.GetComponent<XRGrabInteractable>();
+			if (comp != null)
+			{
+				comp.enabled = !isPaused;
+			}
 		}
 	}
 
@@ -51,7 +55,11 @@ public class PressA : MonoBehaviour
 		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
 		foreach (var item in labEquipment)
 		{
-			item.GetComponent<XRGrabInteractable>().enabled = !isPaused;
+			var comp = item.GetComponent<XRGrabInteractable>();
+			if (comp != null)
+			{
+				comp.enabled = !isPaused;
+			}
 		}
 
 	}
