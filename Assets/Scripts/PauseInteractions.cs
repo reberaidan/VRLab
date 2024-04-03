@@ -22,13 +22,16 @@ public class PauseInteractions : MonoBehaviour
 		
     }
 
-	public void ResumeClicked(){
+	//moved reference to PressA function to keep consistency - Aidan
+	/*public void ResumeClicked(){
 		PauseMenu.SetActive(false);
-		GameObject.Find("Beaker water (4)").GetComponent<XRGrabInteractable>().enabled = true;
-		GameObject.Find("Erlenmeyer_flask with water (3)").GetComponent<XRGrabInteractable>().enabled = true;
-		GameObject.Find("florence_flask with water (1)").GetComponent<XRGrabInteractable>().enabled = true;
+		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
+		foreach (var item in labEquipment)
+		{
+			item.GetComponent<XRGrabInteractable>().enabled = true;
+		}
 
-	}
+    }*/
 	
 	public void HelpClicked(){
 			HelpMenu.SetActive(true);
@@ -36,10 +39,11 @@ public class PauseInteractions : MonoBehaviour
 	}
 	
 	public void MainMenuClicked(){
-		GameObject.Find("Beaker water (4)").GetComponent<XRGrabInteractable>().enabled = true;
-		GameObject.Find("Erlenmeyer_flask with water (3)").GetComponent<XRGrabInteractable>().enabled = true;
-		GameObject.Find("florence_flask with water (1)").GetComponent<XRGrabInteractable>().enabled = true;
-		SceneManager.LoadScene(0);
+		//Unsure why we are re-enabling grabbing if we are going back to the main menu. - Aidan
+/*
+		GameObject.Find("Lab Equipment").GetComponent<XRGrabInteractable>().enabled = true;
+        GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = true;*/
+        SceneManager.LoadScene(0);
 		
 	}
 	
