@@ -13,6 +13,7 @@ public class PressA : MonoBehaviour
 	public GameObject HelpMenu;
 	public GameObject LabEquipment;
 
+	public bool isPaused = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -31,17 +32,34 @@ public class PressA : MonoBehaviour
 	}
 	
 	public void OpenPause(InputAction.CallbackContext obj){
-		PauseMenu.SetActive(true);
+
+		isPaused = !isPaused;
+		PauseMenu.SetActive(isPaused);
 		HelpMenu.SetActive(false);
+		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
+		foreach (var item in labEquipment)
+		{
+			item.GetComponent<XRGrabInteractable>().enabled = !isPaused;
+		}
+	}
 
-		GameObject.Find("Lab Equipment").GetComponent<XRGrabInteractable>().enabled = false;
-        GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = false;
-    }
-	
-	
+	public void ResumeClicked()
+	{
+		isPaused = !isPaused;
+		PauseMenu.SetActive(isPaused);
+		HelpMenu.SetActive(false);
+		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
+		foreach (var item in labEquipment)
+		{
+			item.GetComponent<XRGrabInteractable>().enabled = !isPaused;
+		}
 
-    // Update is called once per frame
-    void Update()
+	}
+
+
+
+	// Update is called once per frame
+	void Update()
     {
         
     }

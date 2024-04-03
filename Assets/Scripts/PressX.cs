@@ -9,16 +9,17 @@ public class PressX : MonoBehaviour
     public InputActionReference pressButton;
     public GameObject EquipmentCabinet;
 
-    private List<XRGrabInteractable> interactables = new List<XRGrabInteractable>();
+    private List<GameObject> interactables = new List<GameObject>();
 
     private bool isEquipmentCabinetActive = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        interactables.Add(GameObject.Find("Beakers").GetComponent<XRGrabInteractable>());
-        interactables.Add(GameObject.Find("Erlenmeyer_flasks").GetComponent<XRGrabInteractable>());
-        interactables.Add(GameObject.Find("Graduated_Cylinders").GetComponent<XRGrabInteractable>());
+        //These are never getting added to the list, they are returning nulls because the equipment cabinet is getting loaded in after the XRRig - Aidan
+        /*interactables.Add(GameObject.Find("Beakers"));
+        interactables.Add(GameObject.Find("Erlenmeyer_flasks"));
+        interactables.Add(GameObject.Find("Graduated_Cylinders"));*/
     }
 
     public void OnEnable()
@@ -35,6 +36,7 @@ public class PressX : MonoBehaviour
 
     public void ToggleEquipmentCabinet(InputAction.CallbackContext obj)
     {
+        //this is the only necessary part to the cabinet function - Aidan
         isEquipmentCabinetActive = !isEquipmentCabinetActive;
         EquipmentCabinet.SetActive(isEquipmentCabinetActive);
 
@@ -50,24 +52,26 @@ public class PressX : MonoBehaviour
         }
     }
 
+    //The two functions below were disabled because they will throw errors because the list is empty/has nulls. These cannot be activated or deactivated. - Aidan
     private void EnableAllInteractables()
     {
-        foreach (var interactable in interactables)
-        {
-            interactable.enabled = true;
-        }
+        //print(interactables);
+       // foreach (var interactable in interactables)
+       // {
+       //     print(interactable.name);
+       //     interactable.SetActive(true);
+       // }
     }
 
     private void DisableNonInteractables()
     {
         // Disable all interactables that are not in the list
-        foreach (var interactable in interactables)
+        /*foreach (var interactable in interactables)
         {
-            if (!interactable.isSelected)
-            {
-                interactable.enabled = false;
-            }
-        }
+
+            interactable.SetActive(false);
+            
+        }*/
     }
 
     // Update is called once per frame

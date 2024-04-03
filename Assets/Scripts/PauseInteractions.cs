@@ -22,12 +22,16 @@ public class PauseInteractions : MonoBehaviour
 		
     }
 
-	public void ResumeClicked(){
+	//moved reference to PressA function to keep consistency - Aidan
+	/*public void ResumeClicked(){
 		PauseMenu.SetActive(false);
-		GameObject.Find("Lab Equipment").GetComponent<XRGrabInteractable>().enabled = true;
-        GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = true;
+		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
+		foreach (var item in labEquipment)
+		{
+			item.GetComponent<XRGrabInteractable>().enabled = true;
+		}
 
-    }
+    }*/
 	
 	public void HelpClicked(){
 			HelpMenu.SetActive(true);
@@ -35,8 +39,10 @@ public class PauseInteractions : MonoBehaviour
 	}
 	
 	public void MainMenuClicked(){
+		//Unsure why we are re-enabling grabbing if we are going back to the main menu. - Aidan
+/*
 		GameObject.Find("Lab Equipment").GetComponent<XRGrabInteractable>().enabled = true;
-        GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = true;
+        GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = true;*/
         SceneManager.LoadScene(0);
 		
 	}
