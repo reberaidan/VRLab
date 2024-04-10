@@ -11,6 +11,7 @@ public class TutorialScript : MonoBehaviour
 	public GameObject Instructions3;
 	public GameObject Instructions4;
 	public GameObject Instructions5;
+	public GameObject Instructions6;
 	
 	int i = 1;
 	
@@ -22,12 +23,13 @@ public class TutorialScript : MonoBehaviour
 		Instructions3.SetActive(false);
 		Instructions4.SetActive(false);
 		Instructions5.SetActive(false);
+		Instructions6.SetActive(false);
     }
 
 	public void NextClicked(){
 		i += 1;
-		if (i > 5){
-			i = 5;
+		if (i > 6){
+			i = 6;
 		}
 		if (i == 2){
 			Instructions1.SetActive(false);
@@ -46,6 +48,10 @@ public class TutorialScript : MonoBehaviour
 			Instructions4.SetActive(false);
 			Instructions5.SetActive(true);
 		}
+		if (i == 6){
+			Instructions5.SetActive(false);
+			Instructions6.SetActive(true);
+		}
 		
 	}
 	
@@ -54,7 +60,11 @@ public class TutorialScript : MonoBehaviour
 		if (i < 1){
 			i = 1;
 		}
+		if (i == 6){
+			Instructions6.SetActive(true);
+		}
 		if (i == 5){
+			Instructions6.SetActive(false);
 			Instructions5.SetActive(true);
 		}
 		if (i == 4){
@@ -77,10 +87,4 @@ public class TutorialScript : MonoBehaviour
 		}
 		
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
