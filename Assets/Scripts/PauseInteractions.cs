@@ -34,9 +34,10 @@ public class PauseInteractions : MonoBehaviour
     }*/
 	
 	public void HelpClicked(){
-			HelpMenu.SetActive(true);
-			PauseMenu.SetActive(false);
+		HelpMenu.SetActive(true);
+		PauseMenu.SetActive(false);
 	}
+	
 	
 	public void MainMenuClicked(){
 		//Unsure why we are re-enabling grabbing if we are going back to the main menu. - Aidan
