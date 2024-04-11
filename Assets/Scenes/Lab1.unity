@@ -2765,7 +2765,9 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7544701471445250977, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+    - {fileID: 3027853291280532718, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

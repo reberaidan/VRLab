@@ -5803,9 +5803,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Interaction Setup
       objectReference: {fileID: 0}
+    - target: {fileID: 7618308163458774647, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: EquipmentCabinet
+      value: 
+      objectReference: {fileID: 1931398383}
     - target: {fileID: 8835995695329340674, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835995696777838374, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835995696777838374, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835995696777838374, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835995696777838374, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8835995696784189386, guid: 895f6f3c2d334633b5800312285058d2,
@@ -5833,7 +5858,9 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3027853291280532718, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+    - {fileID: 7544701471445250977, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6830,6 +6857,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 015d07e8f9746c94eb8cd53e5b0964ab, type: 3}
+--- !u!1 &1931398383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5357238664930371632, guid: 35a0ff405c028a84ea19cdd98c893fd9,
+    type: 3}
+  m_PrefabInstance: {fileID: 479288088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1956158641
 PrefabInstance:
   m_ObjectHideFlags: 0
