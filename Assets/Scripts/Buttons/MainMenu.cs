@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
@@ -45,11 +46,25 @@ public class MainMenu : MonoBehaviour
 	}
 	
 	public void BeginClicked(){
-		if (tutorialPrep.activeSelf){
+		StartCoroutine("fadeOutScene");
+	}
+
+	IEnumerator fadeOutScene()
+	{
+		GameObject.Find("Fade").GetComponent<Animator>().SetTrigger("FadeOut");
+		yield return new WaitForSeconds(2);
+		StartLesson();
+	}
+
+	private void StartLesson()
+	{
+		if (tutorialPrep.activeSelf)
+		{
 			SceneManager.LoadScene("TutorialLab");
 		}
-		
-		if (lab1Prep.activeSelf){
+
+		if (lab1Prep.activeSelf)
+		{
 			SceneManager.LoadScene("Lab1");
 		}
 	}

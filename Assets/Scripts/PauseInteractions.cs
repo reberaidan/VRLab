@@ -17,7 +17,8 @@ public class PauseInteractions : MonoBehaviour
 	// Start is called before the first frame update
     public void Start()
     {
-        PauseMenu.SetActive(false);
+		GameObject.Find("Fade").GetComponent<Animator>().ResetTrigger("FadeOut");
+		PauseMenu.SetActive(false);
 		HelpMenu.SetActive(false);
 		
     }
@@ -41,11 +42,20 @@ public class PauseInteractions : MonoBehaviour
 	
 	public void MainMenuClicked(){
 		//Unsure why we are re-enabling grabbing if we are going back to the main menu. - Aidan
-/*
-		GameObject.Find("Lab Equipment").GetComponent<XRGrabInteractable>().enabled = true;
-        GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = true;*/
-        SceneManager.LoadScene(0);
+		/*
+				GameObject.Find("Lab Equipment").GetComponent<XRGrabInteractable>().enabled = true;
+				GameObject.Find("NewLabEquipment").GetComponent<XRGrabInteractable>().enabled = true;*/
+
+		StartCoroutine("fadeOutMainMenu");
 		
+	}
+
+	IEnumerator fadeOutMainMenu()
+	{
+		GameObject.Find("Fade").GetComponent<Animator>().SetTrigger("FadeOut");
+		yield return new WaitForSeconds(2);
+		PauseMenu.SetActive(false);
+		SceneManager.LoadScene(0);
 	}
 	
 	public void ReturnClicked(){
