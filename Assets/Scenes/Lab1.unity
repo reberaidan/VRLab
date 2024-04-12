@@ -2247,6 +2247,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272139088}
   m_CullTransparentMesh: 1
+--- !u!1001 &277303657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7112059431661060959, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_Name
+      value: rack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112059431661060959, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 359
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.284
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636078515329145317, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769599392344728202, guid: 513546a837bb5d44cbbb2f9939336861,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2bece4266c1175a4faabdb2e7063f6fb, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 513546a837bb5d44cbbb2f9939336861, type: 3}
 --- !u!1 &284695913
 GameObject:
   m_ObjectHideFlags: 0
@@ -7965,7 +8048,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2089770356}
   m_Direction: 2
   m_Value: 0.99999994
-  m_Size: 0.21358155
+  m_Size: 0.20939161
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8667,29 +8750,29 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Basic Controls:\n- The analog stick on the left controller will allow
-    you to move around the labspace and manipulate objects held with that hand.\n-
+  m_Text: "Basic Controls:\r\n- The analog stick on the left controller will allow
+    you to move around the labspace and manipulate objects held with that hand.\r\n-
     The analog stick on the right controller changes your viewpoint and allows you
     to teleport by pressing forwards and releasing in an applicable space. (This
     controller can also rotate and hold objects) This stick can also scroll the text
-    boxes of the help/feedback menus.\n- The X button on the left hand controller
+    boxes of the help/feedback menus.\r\n- The X button on the left hand controller
     summons a cabinet full of glassware for your use. It also dismisses the cabinet
-    (but not any glassware you've removed from it).\n- The A button on the right
-    hand controller will open/close the pause menu.\n- The side grip buttons on the
-    controllers allow you to manipulate grabbable objects (either with the controller
-    directly or the beams projected).\n- VR Button interaction can be found by pressing
-    the triggers on your controllers or by physically pressing the VR button. The
-    triggers can also be used to interact with the scroll bars of the help/feedback
-    menus.\n\nLab Basics:\n\nThe Clipboard \n- the clipboard will always have next
-    step needed to complete the lab you are currently in on it. \n\nFeedback\n- the
-    feedback window will open upon completing the lab. It will provide details on
-    your progress and any mistakes made. It will also suggest improvements.\n- pressing
-    the 'exit feedback' button keeps the lab open but closes the feedback window\n-
-    pressing the 'exit to menu' button returns you to the main menu and ends the
-    lab\n\nThe Pause/Help Menus\n- press the A button to enter the Pause menu and
-    the help button in said menu to return to this screen.\n- pressing 'return' returns
-    you to the pause menu from the help menu\n- pressing 'main menu' ends the lab
-    and takes you to the main menu scene "
+    (but not any glassware you've removed from it).\r\n- The A button on the right
+    hand controller will open/close the pause menu.\r\n- The side grip buttons on
+    the controllers allow you to manipulate grabbable objects (either with the controller
+    directly or the beams projected).\r\n- VR Button interaction can be found by
+    pressing the triggers on your controllers or by physically pressing the VR button.
+    The triggers can also be used to interact with the scroll bars of the help/feedback
+    menus.\r\n\r\nLab Basics:\r\n\r\nThe Clipboard \r\n- the clipboard will always
+    have the next step needed to complete the lab you are currently in on it. \r\n\r\nFeedback\r\n-
+    the feedback window will open upon completing the lab. It will provide details
+    on your progress and any mistakes made. It will also suggest improvements.\r\n-
+    pressing the 'exit feedback' button keeps the lab open but closes the feedback
+    window\r\n- pressing the 'exit to menu' button returns you to the main menu and
+    ends the lab\r\n\r\nThe Pause/Help Menus\r\n- press the A button to enter the
+    Pause menu and the help button in said menu to return to this screen.\r\n- pressing
+    'return' returns you to the pause menu from the help menu\r\n- pressing 'main
+    menu' ends the lab and takes you to the main menu scene \r\n \r"
 --- !u!222 &1044158653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16835,3 +16918,4 @@ SceneRoots:
   - {fileID: 420653339}
   - {fileID: 483445230}
   - {fileID: 512916444}
+  - {fileID: 277303657}
