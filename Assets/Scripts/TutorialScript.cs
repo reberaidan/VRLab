@@ -12,8 +12,9 @@ public class TutorialScript : MonoBehaviour
 	public GameObject Instructions4;
 	public GameObject Instructions5;
 	public GameObject Instructions6;
+	public ClipBoard clipboard;
 	
-	int i = 1;
+	private int i = 1;
 	
     // Start is called before the first frame update
     void Start()
@@ -28,15 +29,18 @@ public class TutorialScript : MonoBehaviour
 
 	public void NextClicked(){
 		i += 1;
-		if (i > 6){
-			i = 6;
+		if (i > 7){
+			i = 7;
+			
 		}
 		if (i == 2){
+			print("well");
 			Instructions1.SetActive(false);
 			Instructions2.SetActive(true);
 			BackButton.SetActive(true);
 		}
 		if (i == 3){
+			print("it did");
 			Instructions2.SetActive(false);
 			Instructions3.SetActive(true);
 		}
@@ -51,6 +55,9 @@ public class TutorialScript : MonoBehaviour
 		if (i == 6){
 			Instructions5.SetActive(false);
 			Instructions6.SetActive(true);
+		}
+		if (i == 7){
+			clipboard.tutorialCase();
 		}
 		
 	}

@@ -54,7 +54,9 @@ public class PauseInteractions : MonoBehaviour
 	{
 		GameObject.Find("Fade").GetComponent<Animator>().SetTrigger("FadeOut");
 		yield return new WaitForSeconds(2);
-		PauseMenu.SetActive(false);
+		if(PauseMenu.activeSelf){
+			PauseMenu.SetActive(false);
+		}
 		SceneManager.LoadScene(0);
 	}
 	
