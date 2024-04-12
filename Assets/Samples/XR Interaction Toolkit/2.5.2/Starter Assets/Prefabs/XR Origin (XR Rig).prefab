@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4778211696441940833}
   - component: {fileID: 202364692}
   - component: {fileID: 942810691211101373}
+  - component: {fileID: 6277415448077519779}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -349,6 +350,21 @@ MonoBehaviour:
   - groupMember: {fileID: 4343660526480754339}
     overrideGroupMembers:
     - {fileID: 2434299456458490401}
+--- !u!114 &6277415448077519779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202364687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b1bd49fcc057d4491a8b1450c0df27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressButton: {fileID: 8214440650317223658, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  EquipmentCabinet: {fileID: 0}
 --- !u!1 &1670256624
 GameObject:
   m_ObjectHideFlags: 0
