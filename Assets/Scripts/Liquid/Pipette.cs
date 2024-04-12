@@ -7,11 +7,14 @@ public class Pipette : MonoBehaviour
 {
     [SerializeField] private Material empty;
     [SerializeField] private Material filled;
+	[SerializeField] private List<AudioClip> clipList;
+	[SerializeField] private AudioSource source;
 	private Color originalColor;
     public bool isFilled = false;
 	// Start is called before the first frame update
 	private void Start()
 	{
+		source = gameObject.GetComponent<AudioSource>();
 		originalColor = gameObject.GetComponent<MeshRenderer>().material.color;
 	}
 	private void OnTriggerEnter(Collider other)
@@ -19,6 +22,8 @@ public class Pipette : MonoBehaviour
 		Material color;
 		if (other.gameObject.CompareTag("BaseLiquid") && !isFilled)
 		{
+			source.clip = clipList[Random.Range(0, clipList.Count)];
+			source.Play();
 			isFilled = true;
 			color = other.gameObject.GetComponent<MeshRenderer>().material;
 			var colorCode = color.color;
@@ -32,6 +37,8 @@ public class Pipette : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("HoldingBeaker") && isFilled)
 		{
+			source.clip = clipList[Random.Range(0, clipList.Count)];
+			source.Play();
 			isFilled = false;
 			gameObject.GetComponent<MeshRenderer>().material.color = originalColor;
 
