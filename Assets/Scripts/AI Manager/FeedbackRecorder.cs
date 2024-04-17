@@ -37,6 +37,15 @@ public class FeedbackRecorder : MonoBehaviour
         FeedbackField.SetActive(true);
         conversation.SubmitChat();
 	}
+
+    public void tutorialFeedback()
+    {
+		conversation.inputText += "Can you explain your role and function in the lab? What can you do and what do you provide for me?";
+
+
+		FeedbackField.SetActive(true);
+		conversation.SubmitChat();
+	}
     public void feedbackBurns()
 	{
         if(burns!= 0) { 
