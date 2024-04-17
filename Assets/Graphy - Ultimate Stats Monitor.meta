@@ -1,9 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Graphy - Ultimate Stats Monitor/Editor.meta
+guid: 74026f7916b08a343916493b0a1752cc
+========
 guid: 2b771290a9ed1614fbc5a745ef7ba669
+>>>>>>>> Stashed changes:Assets/Graphy - Ultimate Stats Monitor.meta
 folderAsset: yes
-timeCreated: 1514034907
-licenseType: Store
 DefaultImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
