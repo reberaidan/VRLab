@@ -12,7 +12,6 @@ public class ClipBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		
         foreach (var instr in instructions)
         {
             instr.gameObject.SetActive(false);
@@ -39,13 +38,4 @@ public class ClipBoard : MonoBehaviour
         return false;
 
     }
-	
-	public bool tutorialCase(){
-		// if we are in the tutorial, then open the feedback upon completing the tutorial
-		if(feedbackGiven == false){
-			feedbackRecorder.tutorialFeedback();
-		}
-		feedbackGiven = true;
-		return true;
-	}
 }

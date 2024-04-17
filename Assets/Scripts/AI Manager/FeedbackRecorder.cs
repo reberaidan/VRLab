@@ -24,7 +24,6 @@ public class FeedbackRecorder : MonoBehaviour
 
     public void startFeedback()
 	{
-
         conversation.inputText += "I have completed my lab! Here are some of the things that I did during my lab: ";
 
         feedbackBurns();
