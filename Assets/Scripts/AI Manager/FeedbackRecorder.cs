@@ -16,6 +16,10 @@ public class FeedbackRecorder : MonoBehaviour
 
     private int itemsEaten = 0;
 
+    [Tooltip("Add mixtures to AI feedback")]
+    [SerializeField] private bool addMixturesExplored;
+    private int mixturesExplored;
+
     private string[] itemEatenNames = new string[] { };
 
     [SerializeField] private ChatBehaviour conversation;

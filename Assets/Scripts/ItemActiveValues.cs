@@ -26,9 +26,6 @@ public class ItemActiveValues : MonoBehaviour
 	{
 		if (other.CompareTag("Heater"))
 		{
-            var heater = other.GetComponent<HeatingElement>();
-            //implement q = mcat
-            temperature = temperature + heater.heatingTemp;
 		}
 
 	}
