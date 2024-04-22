@@ -19,7 +19,6 @@ public class ColorMixing : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-        print(other.name);
         if (other.gameObject.CompareTag("pipette"))
         {
 			if (other.gameObject.GetComponent<Pipette>().isFilled && gameObject.CompareTag("HoldingBeaker"))

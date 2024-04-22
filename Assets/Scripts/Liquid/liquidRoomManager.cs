@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class liquidRoomManager : MonoBehaviour
 {
@@ -88,7 +89,7 @@ public class liquidRoomManager : MonoBehaviour
                 currentMixture++;
                 if(currentMixture == totalMixtures)
 				{
-                    //do AI feedback
+                    feedback.startFeedback();
 				}
 				else
 				{
@@ -101,32 +102,48 @@ public class liquidRoomManager : MonoBehaviour
 		else
 		{
             print("not the correct mixture");
-            //add liquids mixed to feedbackrecorder
+            
 		}
+        feedback.incrementLiquidMixed();
 	}
 
     private void setClipboardInstructions()
 	{
         if(currentStep == 0 && currentMixture == 0)
 		{
+            print("1) first instruction");
             clipboard.text = "In this lab, you will be mixing different liquids together to see the effects of color mixing.\n\n" + "With a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.";
 		}
         else if(currentStep == 0)
 		{
+            print("2) first for any but first");
             clipboard.text = "With a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.";
         }
         else if(currentMixture == totalMixtures-1 && currentStep == totalLiquids-1)
 		{
-            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + "beaker.\n\nAfterwards, we are done with our equipment. Rinse out your beakers in the sink.";
+            print("3) finishing for the lab");
+            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.\n\nAfterwards, we are done with our equipment. Rinse out your beakers in the sink.";
 		}
         else if(currentStep == totalLiquids - 1)
 		{
-            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + "beaker.\n\nThis will be your final liquid before a new mixture.";
+            print("4) finishing before new liquid");
+            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.\n\nThis will be your final liquid before a new mixture.";
 		}
 		else
 		{
-            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + "beaker.";
+            print("5) just going to new instruction");
+            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.";
 		}
 	}
+
+    public void resubmitFeedback()
+    {
+        feedback.resubmitFeedback();
+    }
+
+    public void exitLab()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 }

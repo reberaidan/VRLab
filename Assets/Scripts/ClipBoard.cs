@@ -6,7 +6,7 @@ public class TextMeshProGUI : MonoBehaviour
 {
     [SerializeField] public List<GameObject> instructions;
     [SerializeField] private FeedbackRecorder feedbackRecorder;
-    [SerializeField] private ColorMixing centerBeaker;
+    //[SerializeField] private ColorMixing centerBeaker;
     private int currentStep = 0;
     private bool feedbackGiven = false;
 	// Start is called before the first frame update
