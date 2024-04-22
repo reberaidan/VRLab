@@ -13,6 +13,7 @@ public class PressA : MonoBehaviour
 	public GameObject HelpMenu;
 	public GameObject LabEquipment;
 
+	public bool isPaused = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -31,18 +32,42 @@ public class PressA : MonoBehaviour
 	}
 	
 	public void OpenPause(InputAction.CallbackContext obj){
-		PauseMenu.SetActive(true);
+
+		isPaused = !isPaused;
+		PauseMenu.SetActive(isPaused);
 		HelpMenu.SetActive(false);
-
-		GameObject.Find("Beaker water (4)").GetComponent<XRGrabInteractable>().enabled = false;
-		GameObject.Find("Erlenmeyer_flask with water (3)").GetComponent<XRGrabInteractable>().enabled = false;
-		GameObject.Find("florence_flask with water (1)").GetComponent<XRGrabInteractable>().enabled = false;
+		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
+		foreach (var item in labEquipment)
+		{
+			var comp = item.GetComponent<XRGrabInteractable>();
+			if (comp != null)
+			{
+				comp.enabled = !isPaused;
+			}
+		}
 	}
-	
-	
 
-    // Update is called once per frame
-    void Update()
+	public void ResumeClicked()
+	{
+		isPaused = !isPaused;
+		PauseMenu.SetActive(isPaused);
+		HelpMenu.SetActive(false);
+		var labEquipment = GameObject.FindGameObjectsWithTag("Equipment");
+		foreach (var item in labEquipment)
+		{
+			var comp = item.GetComponent<XRGrabInteractable>();
+			if (comp != null)
+			{
+				comp.enabled = !isPaused;
+			}
+		}
+
+	}
+
+
+
+	// Update is called once per frame
+	void Update()
     {
         
     }
