@@ -13,6 +13,7 @@ public class PauseInteractions : MonoBehaviour
 	public GameObject PauseMenu;
 	public GameObject HelpMenu;
 	public GameObject LabEquipment;
+	[SerializeField] GameObject feedback;
 
 	// Start is called before the first frame update
     public void Start()
@@ -63,7 +64,17 @@ public class PauseInteractions : MonoBehaviour
 		
 		
 	}
-	
+
+	public void restartLab()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void ExitFeedback()
+	{
+		feedback.SetActive(false);
+	}
+
 	void Update()
     {
 			

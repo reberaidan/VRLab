@@ -12,6 +12,7 @@ TagManager:
   - HoldingBeaker
   - pipette
   - cleaning
+  - roomManager
   layers:
   - Default
   - TransparentFX
