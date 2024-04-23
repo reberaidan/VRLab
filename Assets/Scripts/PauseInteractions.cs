@@ -13,6 +13,7 @@ public class PauseInteractions : MonoBehaviour
 	public GameObject PauseMenu;
 	public GameObject HelpMenu;
 	public GameObject LabEquipment;
+	[SerializeField] GameObject feedback;
 
 	// Start is called before the first frame update
     public void Start()
@@ -35,10 +36,9 @@ public class PauseInteractions : MonoBehaviour
     }*/
 	
 	public void HelpClicked(){
-		HelpMenu.SetActive(true);
-		PauseMenu.SetActive(false);
+			HelpMenu.SetActive(true);
+			PauseMenu.SetActive(false);
 	}
-	
 	
 	public void MainMenuClicked(){
 		//Unsure why we are re-enabling grabbing if we are going back to the main menu. - Aidan
@@ -54,9 +54,7 @@ public class PauseInteractions : MonoBehaviour
 	{
 		GameObject.Find("Fade").GetComponent<Animator>().SetTrigger("FadeOut");
 		yield return new WaitForSeconds(2);
-		if(PauseMenu.activeSelf){
-			PauseMenu.SetActive(false);
-		}
+		PauseMenu.SetActive(false);
 		SceneManager.LoadScene(0);
 	}
 	
@@ -66,7 +64,17 @@ public class PauseInteractions : MonoBehaviour
 		
 		
 	}
-	
+
+	public void restartLab()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void ExitFeedback()
+	{
+		feedback.SetActive(false);
+	}
+
 	void Update()
     {
 			
