@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class FeedbackRecorder : MonoBehaviour
 {
-    
-    private int itemsDropped = 0;
+	[Tooltip("Add items dropped to AI feedback")]
+	[SerializeField] private bool addItemsDropped;
+	private int itemsDropped = 0;
 
     private List<string> itemDroppedNames = new List<string> { };
 
-    private int burns = 0;
+	[Tooltip("Add burns to AI feedback")]
+	[SerializeField] private bool addBurns;
+	private int burns = 0;
 
-    private int liquidsAdded = 0;
+	[Tooltip("Add items eaten to AI feedback")]
+	[SerializeField] private bool addItemsEaten;
+	private int itemsEaten = 0;
 
-    private int itemsEaten = 0;
+    [Tooltip("Add mixtures to AI feedback")]
+    [SerializeField] private bool addLiquidsAdded;
+    private int liquidsAdded;
 
     private string[] itemEatenNames = new string[] { };
 
@@ -26,11 +33,20 @@ public class FeedbackRecorder : MonoBehaviour
 	{
         conversation.inputText += "I have completed my lab! Here are some of the things that I did during my lab: ";
 
-        feedbackBurns();
+        if (addBurns)
+        {
+            feedbackBurns();
+        }
 
-        feedbackDropped();
+        if (addItemsDropped)
+        {
+            feedbackDropped();
+        }
 
-        feedbackLiquidMixed();
+        if (addLiquidsAdded)
+        {
+            feedbackLiquidMixed(); 
+        }
 
         conversation.inputText += "What do you think of my performance? ";
 
@@ -48,9 +64,7 @@ public class FeedbackRecorder : MonoBehaviour
 	}
     public void feedbackBurns()
 	{
-        if(burns!= 0) { 
-            conversation.inputText += "I burned myself " + burns.ToString() + " times!";
-        }
+        conversation.inputText += "I burned myself " + burns.ToString() + " times!";
 	}
 
     public void incrementBurns()
@@ -60,13 +74,7 @@ public class FeedbackRecorder : MonoBehaviour
 
 	private void feedbackDropped()
 	{
-        if(itemsDropped!= 0)
-        {
-            conversation.inputText += "I dropped " + itemsDropped.ToString() + " items during the lab. ";
-        }
-
-
-        //  conversation.inputText += "The most frequently dropped item: beaker";
+        conversation.inputText += "I dropped " + itemsDropped.ToString() + " items during the lab. ";
 	}
 
     public void incrementDropped()
@@ -76,14 +84,20 @@ public class FeedbackRecorder : MonoBehaviour
 
    private void feedbackLiquidMixed()
     {
-        if(liquidsAdded!= 0)
-        {
-            conversation.inputText += "I added " + liquidsAdded.ToString() + " liquids to beakers during the lab. ";
-        }
+
+        conversation.inputText += "I added " + liquidsAdded.ToString() + " liquids to beakers during the lab. ";
+
     }
 
     public void incrementLiquidMixed()
     {
         liquidsAdded++;
+    }
+
+    public void resubmitFeedback()
+    {
+        conversation.inputText = "Can I get some more feedback for the lab? Start you response with 'Some additional feedback I can provide'";
+
+        conversation.SubmitChat();
     }
 }

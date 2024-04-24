@@ -156,6 +156,8 @@ namespace OpenAI.Samples.Chat
                     insert.text += response.ToString().Replace("![Image](output.jpg)", string.Empty);
                 }
 
+                insert.text += "\n\n";
+
                 //GenerateSpeech(response);
             }
             catch (Exception e)
