@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bd90d66eeb85f55478029d23a6ed02e2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pressButton: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  - rack: {instanceID: 0}
+  - NewLabEquipment: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

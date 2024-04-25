@@ -40,6 +40,7 @@ public class Pipette : MonoBehaviour
 			source.clip = clipList[Random.Range(0, clipList.Count)];
 			source.Play();
 			isFilled = false;
+			gameObject.GetComponent<MeshRenderer>().material = empty;
 			gameObject.GetComponent<MeshRenderer>().material.color = originalColor;
 
 		}
