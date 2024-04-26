@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4361536449720817410}
   m_Layer: 0
   m_Name: RightDoor
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 64
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7412331408643239095}
   m_Layer: 0
   m_Name: pCube172
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 2640865668365155730}
   m_Layer: 0
   m_Name: EquipmentCabinet
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 4657212773194917776}
   m_Layer: 0
   m_Name: pCube147
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 2541484916709894432}
   m_Layer: 0
   m_Name: LeftDoor
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 64
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 2117071925692470948}
   m_Layer: 0
   m_Name: pCube145
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 4838342274424292362}
   m_Layer: 0
   m_Name: pCube144
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 8792471771086813874}
   m_Layer: 0
   m_Name: pCube142
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1446,7 +1446,7 @@ GameObject:
   - component: {fileID: 1758672546973351616}
   m_Layer: 0
   m_Name: pCube141
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1551,7 +1551,7 @@ GameObject:
   - component: {fileID: 9216513316939500623}
   m_Layer: 0
   m_Name: pCube146
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1654,7 +1654,7 @@ GameObject:
   - component: {fileID: 3902523118704224831}
   m_Layer: 0
   m_Name: Cabinet
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 64
@@ -1779,7 +1779,7 @@ GameObject:
   - component: {fileID: 3768786805511922296}
   m_Layer: 0
   m_Name: pCube201
-  m_TagString: Untagged
+  m_TagString: EquipmentCabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
+using System.IO;
+using UnityEngine.UI;
+using System.IO.Enumeration;
 
 public class liquidRoomManager : MonoBehaviour
 {
@@ -21,6 +25,8 @@ public class liquidRoomManager : MonoBehaviour
 
     [SerializeField] FeedbackRecorder feedback;
 
+    [SerializeField] Text returnFeedback;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +40,7 @@ public class liquidRoomManager : MonoBehaviour
         targetMixtures = new List<Color>();
         for(int i = 0; i<totalLiquids; i++)
 		{
-            targetColors.Add(sceneMaterials[Random.Range(0, sceneMaterials.Count)]);
+            targetColors.Add(sceneMaterials[UnityEngine.Random.Range(0, sceneMaterials.Count)]);
             if (i == 0)
 			{
                 targetMixtures.Add(targetColors[0].GetComponent<MeshRenderer>().material.color);
@@ -164,6 +170,22 @@ public class liquidRoomManager : MonoBehaviour
 
     public void exitLab()
     {
+        var fileName = DateTime.Now.ToString("hh_mm_ss") + ".txt";
+        string path = Application.dataPath + "/" + fileName;
+        if(File.Exists(fileName))
+        {
+            print(path);
+            print("file already exists");
+        }
+        else
+        {
+            print(path);
+            File.WriteAllText(path, returnFeedback.text);
+            /*var sr = File.CreateText(fileName);
+            sr.Write(returnFeedback.text);
+            sr.Close();
+            print("file written");*/
+        }
         SceneManager.LoadScene(0);
     }
 
