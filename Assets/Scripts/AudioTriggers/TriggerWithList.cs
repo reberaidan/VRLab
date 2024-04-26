@@ -13,7 +13,7 @@ public class BeakerTrigger : MonoBehaviour
 	}
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (!collision.gameObject.CompareTag("pipette"))
+		if (!collision.gameObject.CompareTag("pipette") && !collision.gameObject.CompareTag("EquipmentCabinet"))
 		{
 			source.clip = clips[Random.Range(0, clips.Count)];
 			source.Play();

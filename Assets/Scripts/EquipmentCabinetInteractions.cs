@@ -13,7 +13,7 @@ public class EquipmentCabinetInteractions : MonoBehaviour
     {
         //rack.SetActive(false);
         //NewLabEquipment.SetActive(false);
-        EquipmentCabinet.SetActive(false);
+        //EquipmentCabinet.SetActive(false);
         
     }
 

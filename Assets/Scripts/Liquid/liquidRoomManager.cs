@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
+using System.IO;
+using UnityEngine.UI;
+using System.IO.Enumeration;
 
 public class liquidRoomManager : MonoBehaviour
 {
@@ -21,6 +25,8 @@ public class liquidRoomManager : MonoBehaviour
 
     [SerializeField] FeedbackRecorder feedback;
 
+    [SerializeField] Text returnFeedback;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +40,7 @@ public class liquidRoomManager : MonoBehaviour
         targetMixtures = new List<Color>();
         for(int i = 0; i<totalLiquids; i++)
 		{
-            targetColors.Add(sceneMaterials[Random.Range(0, sceneMaterials.Count)]);
+            targetColors.Add(sceneMaterials[UnityEngine.Random.Range(0, sceneMaterials.Count)]);
             if (i == 0)
 			{
                 targetMixtures.Add(targetColors[0].GetComponent<MeshRenderer>().material.color);
@@ -62,31 +68,21 @@ public class liquidRoomManager : MonoBehaviour
 			}
 			
 		}
-        foreach(GameObject item in targetColors)
-		{
-            print(item.name);
-		}
-        foreach(Color item in targetMixtures)
-		{
-            print(item);
-		}
 	}
 
     public void verifyLiquid(Color verifying)
 	{
-        print(verifying);
-        print(targetMixtures[currentStep]);
+		feedback.incrementLiquidMixed();
+        //if correct liquid mixture
         if(verifying == targetMixtures[currentStep])
 		{
-            print("correct step");
             currentStep++;
-            //tell clipboard to increment its steps. Will likely need to say which position the liquids are in.
-            //add liquids mixed to feedbackrecorder
+            //if current beaker is complete
             if(currentStep == totalLiquids)
 			{
-                print("liquid complete");
                 currentStep = 0;
                 currentMixture++;
+                //if all beakers are complete, otherwise make a new mixture
                 if(currentMixture == totalMixtures)
 				{
                     feedback.startFeedback();
@@ -94,45 +90,76 @@ public class liquidRoomManager : MonoBehaviour
 				else
 				{
                     generateTargetColors();
-                    print("generating new targets");
 				}
 			}
             setClipboardInstructions();
 		}
-		else
-		{
-            print("not the correct mixture");
-            
-		}
-        feedback.incrementLiquidMixed();
+        
 	}
 
     private void setClipboardInstructions()
 	{
+        if(currentMixture >= totalMixtures)
+        {
+            clipboard.text = "The lab has been completed! Make sure you clean out your beakers in the sink. Afterwards, explore the lab space and take a look at your feedback on the screen!";
+            return;
+        }
+        
         if(currentStep == 0 && currentMixture == 0)
 		{
-            print("1) first instruction");
-            clipboard.text = "In this lab, you will be mixing different liquids together to see the effects of color mixing.\n\n" + "With a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.";
+            clipboard.text = "In this lab, you will be mixing different liquids together to see the effects of color mixing.\n\n" + 
+                                "Mixtures: " + (currentMixture+1).ToString() + "/" + (totalMixtures).ToString() + 
+                                "\nLiquid: " + (currentStep+1).ToString() + "/" + (totalLiquids).ToString() +
+                                "\nWith a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.\n" +
+                                "Current Mixture: ";
+			for (int i = 0; i <= currentStep; i++)
+			{
+				clipboard.text += targetColors[i].name + " ";
+			}
 		}
         else if(currentStep == 0)
 		{
-            print("2) first for any but first");
-            clipboard.text = "With a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.";
-        }
+            clipboard.text = "Mixtures: " + (currentMixture + 1).ToString() + "/" + (totalMixtures).ToString() +
+								"\nLiquid: " + (currentStep + 1).ToString() + "/" + (totalLiquids).ToString() +
+								"\nWith a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.\n" +
+								"Current Mixture: ";
+			for (int i = 0; i <= currentStep; i++)
+			{
+				clipboard.text += targetColors[i].name + " ";
+			}
+		}
         else if(currentMixture == totalMixtures-1 && currentStep == totalLiquids-1)
 		{
-            print("3) finishing for the lab");
-            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.\n\nAfterwards, we are done with our equipment. Rinse out your beakers in the sink.";
+            clipboard.text = "Mixtures: " + (currentMixture + 1).ToString() + "/" + (totalMixtures).ToString() +
+								"\nLiquid: " + (currentStep + 1).ToString() + "/" + (totalLiquids).ToString() + 
+                                "\nWith your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.\n" + 
+								"Current Mixture: ";
+			for (int i = 0; i <= currentStep; i++)
+			{
+				clipboard.text += targetColors[i].name + " ";
+			}
 		}
         else if(currentStep == totalLiquids - 1)
 		{
-            print("4) finishing before new liquid");
-            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.\n\nThis will be your final liquid before a new mixture.";
+            clipboard.text = "Mixtures: " + (currentMixture + 1).ToString() + "/" + (totalMixtures).ToString() +
+								"\nLiquid: " + (currentStep + 1).ToString() + "/" + (totalLiquids).ToString() + 
+                                "\nWith your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.\n\nThis will be your final liquid before a new mixture.\n" +
+								"Current Mixture: ";
+			for (int i = 0; i <= currentStep; i++)
+			{
+				clipboard.text += targetColors[i].name + " ";
+			}
 		}
 		else
 		{
-            print("5) just going to new instruction");
-            clipboard.text = "With your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.";
+            clipboard.text = "Mixtures: " + (currentMixture + 1).ToString() + "/" + (totalMixtures).ToString() +
+								"\nLiquid: " + (currentStep + 1).ToString() + "/" + (totalLiquids).ToString() +
+								"\nWith your beaker, use the pipette to add the liquid from the " + targetColors[currentStep].name + " beaker.\n" +
+								"Current Mixture: ";
+			for(int i = 0; i <=currentStep; i++)
+            {
+				clipboard.text += targetColors[i].name + " ";
+			}
 		}
 	}
 
@@ -143,6 +170,22 @@ public class liquidRoomManager : MonoBehaviour
 
     public void exitLab()
     {
+        var fileName = DateTime.Now.ToString("hh_mm_ss") + ".txt";
+        string path = Application.dataPath + "/" + fileName;
+        if(File.Exists(fileName))
+        {
+            print(path);
+            print("file already exists");
+        }
+        else
+        {
+            print(path);
+            File.WriteAllText(path, returnFeedback.text);
+            /*var sr = File.CreateText(fileName);
+            sr.Write(returnFeedback.text);
+            sr.Close();
+            print("file written");*/
+        }
         SceneManager.LoadScene(0);
     }
 

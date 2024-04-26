@@ -56,7 +56,7 @@ public class FeedbackRecorder : MonoBehaviour
 
     public void tutorialFeedback()
     {
-		conversation.inputText += "Can you explain your role and function in the lab? What can you do and what do you provide for me?";
+		conversation.inputText += "Explain your role and function in the lab. What can you do and what do you provide for me?";
 
 
 		FeedbackField.SetActive(true);
