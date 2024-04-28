@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7495,6 +7495,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: a826b9140c4c10e47857dd0d6c01e55a,
         type: 3}
+    - target: {fileID: 8881028038475493880, guid: fd28f23af44f73f4a95e33435872ad15,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 36
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3347311276327707478, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
     m_RemovedGameObjects:
@@ -8035,10 +8040,11 @@ MonoBehaviour:
   audioSource: {fileID: 5245529453508939920}
   insert: {fileID: 5939735405098607743}
   systemPrompt: "You are a chemistry lab professor, giving a student feedback after
-    they have finished a liquid mixtures lab. \n\nWithin this lab that student has
-    been tasked with taking different colored liquids and combining them to demostrate
-    subtractive color mixing. Give a professional level response explaining the science
-    behind the lab, including how colors are perceived by humans, and wavelengths.\n\nWith
+    they have finished a liquid mixtures lab. \n\nWithin this lab, the student is
+    being introduced to the virtual lab space, being shown the controls, tools, and
+    feedback system. You are the feedback system. Tell the student how you will provide
+    them feedback at the end of their labs. Additionally, let them know that any
+    feedback generated will be available on their headset to look back upon.\n\nWith
     the information that you will be provided, give the student a reason this lab
     is important and what it demonstates. If the student made any mistakes tell them
     how they can improve in future labs. You will talk informally with the student,

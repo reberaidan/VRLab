@@ -27,9 +27,14 @@ public class FeedbackRecorder : MonoBehaviour
 
     [SerializeField] private ChatBehaviour conversation;
     [SerializeField] private GameObject FeedbackField;
+    private GameObject roomManager;
 
+	private void Start()
+	{
+        roomManager = GameObject.FindWithTag("roomManager");
+	}
 
-    public void startFeedback()
+	public void startFeedback()
 	{
         conversation.inputText += "I have completed my lab! Here are some of the things that I did during my lab: ";
 
@@ -86,6 +91,12 @@ public class FeedbackRecorder : MonoBehaviour
     {
 
         conversation.inputText += "I added " + liquidsAdded.ToString() + " liquids to beakers during the lab. ";
+        if(roomManager.GetComponent<liquidRoomManager>() != null)
+        {
+            var rmAsset = roomManager.GetComponent<liquidRoomManager>();
+            conversation.inputText += "The lab could have been completed with " + (rmAsset.getTotalMixtures() * rmAsset.getTotalSteps()) + " liquids. ";
+
+        }
 
     }
 
