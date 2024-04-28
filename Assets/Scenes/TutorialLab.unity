@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,8 +184,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: df88fd33e0a6b6845af28bf15ea53fc2, type: 2}
+  m_sharedMaterial: {fileID: 566174416549697265, guid: df88fd33e0a6b6845af28bf15ea53fc2,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -209,8 +210,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.75
-  m_fontSizeBase: 0.75
+  m_fontSize: 1.2
+  m_fontSizeBase: 1.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -274,7 +275,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 566174416549697265, guid: df88fd33e0a6b6845af28bf15ea53fc2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1091,15 +1092,16 @@ MonoBehaviour:
   m_text: Welcome to the tutorial of "VR Lab!" In this lesson you will be shown the
     basics for operating within the virtual space.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: df88fd33e0a6b6845af28bf15ea53fc2, type: 2}
+  m_sharedMaterial: {fileID: 566174416549697265, guid: df88fd33e0a6b6845af28bf15ea53fc2,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1116,8 +1118,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7
-  m_fontSizeBase: 7
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1339,8 +1341,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1474,8 +1476,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3857,16 +3859,46 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: df88fd33e0a6b6845af28bf15ea53fc2,
         type: 2}
     - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 566174416549697265, guid: df88fd33e0a6b6845af28bf15ea53fc2,
         type: 2}
+    - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 25426919098646228, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -4775,8 +4807,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5572,15 +5604,16 @@ MonoBehaviour:
     Submit
     Feedback when you''ve finished.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: df88fd33e0a6b6845af28bf15ea53fc2, type: 2}
+  m_sharedMaterial: {fileID: 566174416549697265, guid: df88fd33e0a6b6845af28bf15ea53fc2,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5597,8 +5630,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7359,6 +7392,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: a826b9140c4c10e47857dd0d6c01e55a,
         type: 3}
+    - target: {fileID: 5849765080698951394, guid: fd28f23af44f73f4a95e33435872ad15,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5849765080698951404, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7498,7 +7536,7 @@ PrefabInstance:
     - target: {fileID: 8881028038475493880, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 36
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3347311276327707478, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
@@ -7745,8 +7783,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8040,11 +8078,10 @@ MonoBehaviour:
   audioSource: {fileID: 5245529453508939920}
   insert: {fileID: 5939735405098607743}
   systemPrompt: "You are a chemistry lab professor, giving a student feedback after
-    they have finished a liquid mixtures lab. \n\nWithin this lab, the student is
-    being introduced to the virtual lab space, being shown the controls, tools, and
-    feedback system. You are the feedback system. Tell the student how you will provide
-    them feedback at the end of their labs. Additionally, let them know that any
-    feedback generated will be available on their headset to look back upon.\n\nWith
+    they have finished a liquid mixtures lab. \n\nWithin this lab that student has
+    been tasked with taking different colored liquids and combining them to demostrate
+    subtractive color mixing. Give a professional level response explaining the science
+    behind the lab, including how colors are perceived by humans, and wavelengths.\n\nWith
     the information that you will be provided, give the student a reason this lab
     is important and what it demonstates. If the student made any mistakes tell them
     how they can improve in future labs. You will talk informally with the student,
