@@ -107,7 +107,7 @@ public class liquidRoomManager : MonoBehaviour
         
         if(currentStep == 0 && currentMixture == 0)
 		{
-            clipboard.text = "In this lab, you will be mixing different liquids together to see the effects of color mixing.\n\n" + 
+            clipboard.text = "In this lab, you will be mixing different liquids together to see the effects of color mixing.\n" + 
                                 "Mixtures: " + (currentMixture+1).ToString() + "/" + (totalMixtures).ToString() + 
                                 "\nLiquid: " + (currentStep+1).ToString() + "/" + (totalLiquids).ToString() +
                                 "\nWith a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.\n" +

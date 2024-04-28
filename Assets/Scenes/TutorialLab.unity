@@ -774,8 +774,8 @@ MonoBehaviour:
   - During each lab, a clipboard will be available, providing you with instructions
     on how to complete the lab. When tasks are completed, the clipboard will update.
   - Once a lab is completed, you will be provided with instant feedback from our
-    AI assistant. Press next button to hear from them now!\n\nAfterwards, you can
-    leave this lab.
+    AI assistant. Press next button to hear from them now! Afterwards, you can leave
+    this lab.
   textField: {fileID: 383974747}
   feedbackRecorder: {fileID: 2041469926}
   controls: {fileID: 144443861}
