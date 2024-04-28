@@ -107,7 +107,7 @@ public class liquidRoomManager : MonoBehaviour
         
         if(currentStep == 0 && currentMixture == 0)
 		{
-            clipboard.text = "In this lab, you will be mixing different liquids together to see the effects of color mixing.\n\n" + 
+            clipboard.text = "In this lab, you will be mixing different liquids together to see the effects of color mixing.\n" + 
                                 "Mixtures: " + (currentMixture+1).ToString() + "/" + (totalMixtures).ToString() + 
                                 "\nLiquid: " + (currentStep+1).ToString() + "/" + (totalLiquids).ToString() +
                                 "\nWith a clean beaker, use the pipette to add the liquid from the " + targetColors[0].name + " beaker.\n" +
@@ -170,23 +170,34 @@ public class liquidRoomManager : MonoBehaviour
 
     public void exitLab()
     {
-        var fileName = DateTime.Now.ToString("hh_mm_ss") + ".txt";
-        string path = Application.dataPath + "/" + fileName;
-        if(File.Exists(fileName))
+        var fileName = DateTime.Now.ToString("g") + ".txt";
+#if UNITY_EDITOR
+        string pathy = Application.dataPath + "/" + fileName;
+#else
+        string pathy = Application.persistentDataPath + "/" + fileName;
+#endif
+        try
         {
-            print(path);
-            print("file already exists");
+            if(!File.Exists(fileName))
+            {
+                File.WriteAllText(pathy, returnFeedback.text);
+            }
         }
-        else
+        catch (Exception ex)
         {
-            print(path);
-            File.WriteAllText(path, returnFeedback.text);
-            /*var sr = File.CreateText(fileName);
-            sr.Write(returnFeedback.text);
-            sr.Close();
-            print("file written");*/
+            Debug.Log(ex);
         }
         SceneManager.LoadScene(0);
+    }
+
+    public int getTotalMixtures()
+    {
+        return totalMixtures;
+    }
+
+    public int getTotalSteps()
+    {
+        return totalLiquids;
     }
 
 }
