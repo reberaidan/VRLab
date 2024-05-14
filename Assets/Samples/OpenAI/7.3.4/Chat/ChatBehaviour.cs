@@ -145,7 +145,7 @@ namespace OpenAI.Samples.Chat
                 {
                     if (deltaResponse?.FirstChoice?.Delta == null) { return; }
                     insert.text += deltaResponse.FirstChoice.Delta.ToString();
-                    scrollView.verticalNormalizedPosition = 0f;
+                    scrollView.verticalNormalizedPosition = 1f;
                 }, lifetimeCancellationTokenSource.Token);
 
                 conversation.AppendMessage(response.FirstChoice.Message);

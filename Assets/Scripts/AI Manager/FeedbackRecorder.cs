@@ -29,6 +29,8 @@ public class FeedbackRecorder : MonoBehaviour
     [SerializeField] private GameObject FeedbackField;
     private GameObject roomManager;
 
+    [SerializeField] private int marginOfError;
+
 	private void Start()
 	{
         roomManager = GameObject.FindWithTag("roomManager");
@@ -57,6 +59,7 @@ public class FeedbackRecorder : MonoBehaviour
 
         FeedbackField.SetActive(true);
         conversation.SubmitChat();
+        print(conversation.inputText);
 	}
 
     public void tutorialFeedback()
@@ -95,7 +98,7 @@ public class FeedbackRecorder : MonoBehaviour
         {
             var rmAsset = roomManager.GetComponent<liquidRoomManager>();
             conversation.inputText += "The lab could have been completed with " + (rmAsset.getTotalMixtures() * rmAsset.getTotalSteps()) + " liquids. ";
-
+            conversation.inputText += ("My grade is affected negatively by a letter grade for every {0} liquids I go over or under. Tell me how many liquids I added and how many were expected. ", marginOfError);
         }
 
     }
