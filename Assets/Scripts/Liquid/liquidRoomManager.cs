@@ -170,7 +170,8 @@ public class liquidRoomManager : MonoBehaviour
 
     public void exitLab()
     {
-        var fileName = DateTime.Now.ToString("g") + ".txt";
+        var fileName = DateTime.Now.ToString("HH_mm_ss") + ".txt";
+        print("got file name");
 #if UNITY_EDITOR
         string pathy = Application.dataPath + "/" + fileName;
 #else
@@ -178,9 +179,12 @@ public class liquidRoomManager : MonoBehaviour
 #endif
         try
         {
+            print("in try");
             if(!File.Exists(fileName))
             {
+                print("try writing file");
                 File.WriteAllText(pathy, returnFeedback.text);
+                print("wrote file to " + pathy.ToString());
             }
         }
         catch (Exception ex)
